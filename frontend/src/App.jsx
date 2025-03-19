@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -7,11 +6,11 @@ import AllProjects from "./pages/AllProjects";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Navbar />
       <Routes>
-        <Route path="/portfolio/" element={<Home />} />
-        <Route path="/portfolio/allprojects" element={<AllProjects />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/allprojects" element={<AllProjects />} />
       </Routes>
     </Router>
   );
