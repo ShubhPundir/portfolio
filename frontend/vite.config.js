@@ -13,3 +13,7 @@ export default defineConfig({
     port: 5173,
   },
 })
+
+// COMMANDS: 
+// npm run build
+// npx gh-pages -d dist
