@@ -1,19 +1,19 @@
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
-// import "./styles/App.css"; // Add this for global styles
+import Home from "./pages/Home";
+import AllProjects from "./pages/AllProjects";
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
-    </>
+      <Routes>
+        <Route path="/portfolio/" element={<Home />} />
+        <Route path="/portfolio/allprojects" element={<AllProjects />} />
+      </Routes>
+    </Router>
   );
 }
 

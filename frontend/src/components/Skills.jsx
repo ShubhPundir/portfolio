@@ -41,10 +41,11 @@ const Skills = () => {
             <li>Springboot MVC</li>
             <li>Django & Flask</li>
             <li>Node.js & Express.js</li>
-            <li>MSSQL/MongoDB/Cassandra</li>
+            <li>MS SQL/MongoDB/Cassandra</li>
             <li>Tensorflow & Pytorch</li>
             <li>OpenCV & EasyOCR</li>
             <li>AWS/Azure Deployment</li>
+            <li>Apache Hadoop Ecosystem</li>
           </ul>
         </div>
 
@@ -52,9 +53,9 @@ const Skills = () => {
           <h3>Tools</h3>
           <ul>
             <li>Git & GitHub</li>
-            <li>Postman</li>
             <li>PowerBI & Tableau</li>
-            <li>Excel</li>
+            <li>MS Excel</li>
+            <li>Postman</li>
             <li>Figma</li>
           </ul>
         </div>
