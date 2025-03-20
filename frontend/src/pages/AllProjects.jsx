@@ -5,7 +5,7 @@ const TAGS = {
   SDE: "SDE", // Full-stack development or end-to-end
   ANALYTICS: "Analytics",
   WEB_SCRAPING: "Web Scraping",
-  ML_DL: "ML-DL", // Machine Learning or Deep Learning
+  ML_DL: "ML_DL", // Machine Learning or Deep Learning
   NLP: "NLP",
   CV: "CV", // Computer Vision
   VANILLA_PROGRAMMING: "Vanilla Programming", // No external modules

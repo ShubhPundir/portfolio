@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="hero">
       {/* Tagline at the top */}
-      <h2 className="hero-tagline">Self-Taught | Machine Learning Enthusiast | Data Researcher</h2>
+      <h2 className="hero-tagline">Self-Taught | ML Enthusiast | Data Researcher</h2>
 
       <div className="hero-container">
         {/* Left Side: Description & Buttons */}
