@@ -24,7 +24,7 @@ const Hero = () => {
           <div className="buttons">
             <a href="https://github.com/ShubhPundir" className="btn">GitHub</a>
             <a href="https://www.linkedin.com/in/shubh-pundir-02820321b/" className="btn">LinkedIn</a>
-            <a href="/Shubh_Resume.pdf" download className="btn resume">Download Resume</a>
+            <a href="/portfolio/Shubh_Resume.pdf" download className="btn resume">Download Resume</a>
           </div>
         </div>
 

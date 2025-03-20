@@ -1,8 +1,24 @@
 import "../styles/Projects.css";
 
 const projects = [
-  { title: "MediRecord", description: "A structured medical record system", link: "#" },
-  { title: "Address Book CLI", description: "Efficient search with B-Trees", link: "#" },
+  {
+    title: "MediRecord",
+    description:
+      "A one stop spot for structured medical record system. AI powered prescription queries and results for both patients and doctors.",
+    link: "/portfolio/#/allprojects",
+  },
+  {
+    title: "FIND-DB",
+    description:
+      "A java based Wide Column Database system made from scratch. Efficient search with B+Trees, Sharding and Replication.",
+    link: "/portfolio/#/allprojects",
+  },
+  {
+    title: "Waveform based Music Recommendation System",
+    description:
+      "Managaing Big Data for both musics and users. Waveform and linguistical analysis hybridized with user preference for personalized recommendations",
+    link: "/portfolio/#/allprojects",
+  },
 ];
 
 const Projects = () => {
@@ -14,7 +30,9 @@ const Projects = () => {
           <div key={index} className="project-card">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <a href={project.link} className="btn">View More</a>
+            <a href={project.link} className="btn" target="_blank">
+              View More
+            </a>
           </div>
         ))}
       </div>
@@ -41,12 +59,6 @@ const Projects = () => {
 // 17. Microsoft-Malware-Prediction
 // 18. MediRecord
 // 19. SimpleDB
-// 20. 
-
-
-
-
-
-
+// 20. Waveform based Music Recommendation System
 
 export default Projects;
