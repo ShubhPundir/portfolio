@@ -1,0 +1,51 @@
+.certifications {
+  text-align: center;
+  padding: 50px 5%;
+  background-color: #ffffff;
+}
+
+.certifications h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Two Rows Layout */
+.certifications-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px;
+  justify-content: center;
+}
+
+.cert-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.cert-item h3 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.cert-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 3px 0;
+}
+
+/* Responsive: Stack to Single Column on Small Screens */
+@media (max-width: 900px) {
+  .certifications-container {
+    grid-template-columns: 1fr; /* Stack in one column */
+  }
+
+  .cert-item {
+    width: 90%;
+    margin: auto;
+  }
+}
