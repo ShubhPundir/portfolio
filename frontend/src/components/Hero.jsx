@@ -1,11 +1,11 @@
 import "../styles/Hero.css";
-import myPhoto from "../assets/uni-pic.jpg"; // Ensure the image is inside src/assets/
+import myPhoto from "../assets/formal-pic.jpg"; // Ensure the image is inside src/assets/
 
 const Hero = () => {
   return (
     <section className="hero">
       {/* Tagline at the top */}
-      <h2 className="hero-tagline">Self-Taught | ML Enthusiast | Data Researcher</h2>
+      <h2 className="hero-tagline">Data Scientist</h2>
 
       <div className="hero-container">
         {/* Left Side: Description & Buttons */}
@@ -23,7 +23,7 @@ const Hero = () => {
 
           <div className="buttons">
             <a href="https://github.com/ShubhPundir" className="btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/shubh-pundir-02820321b/" className="btn">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/shubh-pundir/" className="btn">LinkedIn</a>
             <a href="/portfolio/Shubh_Resume.pdf" download className="btn resume">Download Resume</a>
           </div>
         </div>
