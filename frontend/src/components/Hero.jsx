@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="hero">
       {/* Tagline at the top */}
-      <h2 className="hero-tagline">Data Scientist</h2>
+      <h2 className="hero-tagline">Backend and AI Engineer</h2>
 
       <div className="hero-container">
         {/* Left Side: Description & Buttons */}
@@ -13,11 +13,11 @@ const Hero = () => {
           <p className="description">
             Passionate about <b>project-based learning</b>, 
             I thrive on turning ideas into real-world solutions. 
-            With hands-on experience in <b>Natural Language Processing (NLP)</b>, <b>LLM Tuning</b>, and <b>Data Engineering</b>, 
+            With hands-on experience in <b>LLMs</b>, <b>LLM Tuning</b>, and <b>Designing Scalable Systems</b>, 
             I specialize in designing and optimizing intelligent systems.
-            With a strong foundation in Data Analytics and Software Engineering, 
+            With a strong foundation in AI and Software Engineering, 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
-            Over the past two years, I have successfully delivered close to 10 freelanced projects, 
+            Over the past two years, I have successfully delivered 10+ international freelanced projects, 
             gaining expertise in end-to-end development, problem-solving, and client collaboration.
           </p>
 
