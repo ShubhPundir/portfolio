@@ -13,7 +13,7 @@ const Hero = () => {
           <p className="description">
             Passionate about <b>project-based learning</b>, 
             I thrive on turning ideas into real-world solutions. 
-            With hands-on experience in <b>LLMs</b>, <b>LLM Tuning</b>, and <b>Designing Scalable Systems</b>, 
+            With hands-on experience in <b>LLMs</b>, <b>Data Science</b>, and <b>Designing Scalable Systems</b>, 
             I specialize in designing and optimizing intelligent systems.
             With a strong foundation in AI and Software Engineering, 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
