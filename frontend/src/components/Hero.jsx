@@ -17,7 +17,7 @@ const Hero = () => {
             I specialize in designing and optimizing intelligent systems.
             With a strong foundation in AI and Software Engineering, 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
-            Over the past two years, I have successfully delivered 10+ international freelanced projects, 
+            Over the past four years, I have successfully delivered 10+ international freelanced projects (UAE, UK, Denmark, Morocoo), 
             gaining expertise in end-to-end development, problem-solving, and client collaboration.
           </p>
 
