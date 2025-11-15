@@ -17,13 +17,13 @@ type TagType = typeof TAGS[keyof typeof TAGS]
 
 // Tag colors
 const TAG_COLORS: Record<TagType, string> = {
-  SDE: "#007bff", // Blue
-  ANALYTICS: "#7aff33", // Green
-  WEB_SCRAPING: "#17a2b8", // Cyan
-  ML_DL: "#ff5733", // Orange-Red
-  NLP: "#8e44ad", // Purple
-  CV: "#ff33ff", // PINK
-  VANILLA_PROGRAMMING: "#97f236", // RED
+  "SDE": "#007bff", // Blue
+  "Analytics": "#7aff33", // Green
+  "Web Scraping": "#17a2b8", // Cyan
+  "ML_DL": "#ff5733", // Orange-Red
+  "NLP": "#8e44ad", // Purple
+  "CV": "#ff33ff", // PINK
+  "Vanilla Programming": "#97f236", // RED
 }
 
 interface Project {
