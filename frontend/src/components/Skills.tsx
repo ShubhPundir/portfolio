@@ -1,11 +1,16 @@
+import SkillCard from './SkillCard'
+
 const Skills = () => {
   return (
     <section id="skills" className="text-center py-5 px-5 bg-[#f4f4f4] font-sans">
-      <h2>Skills</h2>
+      <h2 className="text-[28px] text-[#333] mb-5">Skills</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 max-w-[1000px] mx-auto">
-        <div className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105">
-          <h3 className="text-[#f0a500] mb-[10px]">Languages</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto px-5">
+        <SkillCard 
+          title="Languages" 
+          bgColor="white" 
+          textAlign="center"
+        >
           <ul className="list-none p-0">
             <li className="text-base text-[#333] my-[5px]">Java</li>
             <li className="text-base text-[#333] my-[5px]">Python</li>
@@ -15,10 +20,13 @@ const Skills = () => {
             <li className="text-base text-[#333] my-[5px]">HTML/CSS</li>
             <li className="text-base text-[#333] my-[5px]">SQL/NOSQL</li>
           </ul>
-        </div>
+        </SkillCard>
 
-        <div className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105">
-          <h3 className="text-[#f0a500] mb-[10px]">Technical Skills</h3>
+        <SkillCard 
+          title="Technical Skills" 
+          bgColor="white" 
+          textAlign="center"
+        >
           <ul className="list-none p-0">
             <li className="text-base text-[#333] my-[5px]">Data Science</li>
             <li className="text-base text-[#333] my-[5px]">Data Analytics/Wrangling</li>
@@ -30,10 +38,13 @@ const Skills = () => {
             <li className="text-base text-[#333] my-[5px]">Web Scraping</li>
             <li className="text-base text-[#333] my-[5px]">Databases</li>
           </ul>
-        </div>
+        </SkillCard>
 
-        <div className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105">
-          <h3 className="text-[#f0a500] mb-[10px]">Frameworks</h3>
+        <SkillCard 
+          title="Frameworks" 
+          bgColor="white" 
+          textAlign="center"
+        >
           <ul className="list-none p-0">
             <li className="text-base text-[#333] my-[5px]">Springboot MVC</li>
             <li className="text-base text-[#333] my-[5px]">Django & Flask</li>
@@ -44,10 +55,13 @@ const Skills = () => {
             <li className="text-base text-[#333] my-[5px]">AWS/Azure Deployment</li>
             <li className="text-base text-[#333] my-[5px]">Apache Hadoop Ecosystem</li>
           </ul>
-        </div>
+        </SkillCard>
 
-        <div className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105">
-          <h3 className="text-[#f0a500] mb-[10px]">Tools</h3>
+        <SkillCard 
+          title="Tools" 
+          bgColor="white" 
+          textAlign="center"
+        >
           <ul className="list-none p-0">
             <li className="text-base text-[#333] my-[5px]">Git & GitHub</li>
             <li className="text-base text-[#333] my-[5px]">PowerBI & Tableau</li>
@@ -55,17 +69,20 @@ const Skills = () => {
             <li className="text-base text-[#333] my-[5px]">Postman</li>
             <li className="text-base text-[#333] my-[5px]">Figma</li>
           </ul>
-        </div>
+        </SkillCard>
 
-        <div className="bg-white p-5 rounded-lg shadow-[0_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105">
-          <h3 className="text-[#f0a500] mb-[10px]">Soft Skills</h3>
+        <SkillCard 
+          title="Soft Skills" 
+          bgColor="white" 
+          textAlign="center"
+        >
           <ul className="list-none p-0">
             <li className="text-base text-[#333] my-[5px]">Problem-Solving</li>
             <li className="text-base text-[#333] my-[5px]">Teamwork & Collaboration</li>
             <li className="text-base text-[#333] my-[5px]">Adaptability</li>
             <li className="text-base text-[#333] my-[5px]">Communication</li>
           </ul>
-        </div>
+        </SkillCard>
       </div>
     </section>
   )
