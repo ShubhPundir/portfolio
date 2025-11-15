@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import "../styles/AllProjects.css";
+'use client'
+
+import { useState } from 'react'
+
 // ENUM for project tags
 const TAGS = {
   SDE: "SDE", // Full-stack development or end-to-end
@@ -9,10 +11,12 @@ const TAGS = {
   NLP: "NLP",
   CV: "CV", // Computer Vision
   VANILLA_PROGRAMMING: "Vanilla Programming", // No external modules
-};
+} as const
+
+type TagType = typeof TAGS[keyof typeof TAGS]
 
 // Tag colors
-const TAG_COLORS = {
+const TAG_COLORS: Record<TagType, string> = {
   SDE: "#007bff", // Blue
   ANALYTICS: "#7aff33", // Green
   WEB_SCRAPING: "#17a2b8", // Cyan
@@ -20,11 +24,17 @@ const TAG_COLORS = {
   NLP: "#8e44ad", // Purple
   CV: "#ff33ff", // PINK
   VANILLA_PROGRAMMING: "#97f236", // RED
-};
+}
 
+interface Project {
+  name: string
+  description: string
+  tags: TagType[]
+  repoLink: string
+}
 
 // List of Projects (Reversed Order)
-const projects = [
+const projects: Project[] = [
   {
     name: "Waveform Music Recommendation System",
     description: "Created a music recommendation system based on waveform analysis.",
@@ -129,7 +139,7 @@ const projects = [
   },
   {
     name: "iNeuronStoreAnalysis",
-    description: "Developed insights into iNeuron’s product sales and customer behavior.",
+    description: "Developed insights into iNeuron's product sales and customer behavior.",
     tags: [TAGS.ANALYTICS],
     repoLink: "https://github.com/ShubhPundir/iNeuronStoreAnalysis",
   },
@@ -145,42 +155,42 @@ const projects = [
     tags: [TAGS.ANALYTICS],
     repoLink: "https://github.com/ShubhPundir/Student-Expenditure-Analysis",
   },
-];
+]
 
 // Extract all unique tags
-const allTags = Object.values(TAGS);
+const allTags = Object.values(TAGS)
 
 const AllProjects = () => {
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState<TagType[]>([])
 
   // Handle tag selection
-  const toggleTag = (tag) => {
+  const toggleTag = (tag: TagType) => {
     setSelectedTags((prevTags) =>
       prevTags.includes(tag) ? prevTags.filter((t) => t !== tag) : [...prevTags, tag]
-    );
-  };
+    )
+  }
 
   // Filter projects based on selected tags
   const filteredProjects =
     selectedTags.length === 0
       ? projects
-      : projects.filter((project) => project.tags.some((tag) => selectedTags.includes(tag)));
+      : projects.filter((project) => project.tags.some((tag) => selectedTags.includes(tag)))
 
   return (
-    <div className="all-projects">
+    <div className="p-5">
       <h1>All Projects</h1>
 
       {/* Tag Filters */}
-      <div className="filter-container">
-        {Object.values(TAGS).map((tag) => (
-          <label key={tag} className="tag-checkbox">
+      <div className="flex flex-wrap gap-[10px] mb-5">
+        {allTags.map((tag) => (
+          <label key={tag} className="flex items-center gap-[5px] cursor-pointer">
             <input
               type="checkbox"
               value={tag}
               checked={selectedTags.includes(tag)}
               onChange={() => toggleTag(tag)}
             />
-            <span className="tag-box" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
+            <span className="py-[5px] px-[10px] rounded-[5px] font-bold text-white" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
               {tag}
             </span>
           </label>
@@ -188,23 +198,23 @@ const AllProjects = () => {
       </div>
 
       {/* Project List (Horizontal Layout) */}
-      <div className="projects-container">
+      <div className="flex flex-wrap gap-5 justify-start">
         {filteredProjects.map((project, index) => (
-          <div key={index} className="project-card">
+          <div key={index} className="flex-1 min-w-[300px] bg-white p-[15px] rounded-[10px] shadow-[0_2px_5px_rgba(0,0,0,0.1)] flex flex-col justify-between">
             {/* Left Side: Name & Description */}
-            <div className="project-info">
-              <h3 className="project-name">
-                <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+            <div className="flex-grow">
+              <h3>
+                <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="text-[#007bff] text-lg font-bold no-underline">
                   {project.name}
                 </a>
               </h3>
-              <p className="project-description">{project.description}</p>
+              <p className="text-sm text-[#555]">{project.description}</p>
             </div>
 
             {/* Right Side: Tags */}
-            <div className="tags">
+            <div className="flex gap-[5px] flex-wrap mt-[10px]">
               {project.tags.map((tag, i) => (
-                <span key={i} className="tag" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
+                <span key={i} className="py-[5px] px-[10px] rounded-[5px] font-bold text-white text-xs" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
                   {tag}
                 </span>
               ))}
@@ -213,8 +223,8 @@ const AllProjects = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
+export default AllProjects
 
-export default AllProjects;
