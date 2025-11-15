@@ -1,164 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-
-// ENUM for project tags
-const TAGS = {
-  SDE: "SDE", // Full-stack development or end-to-end
-  ANALYTICS: "Analytics",
-  WEB_SCRAPING: "Web Scraping",
-  ML_DL: "ML_DL", // Machine Learning or Deep Learning
-  NLP: "NLP",
-  CV: "CV", // Computer Vision
-  VANILLA_PROGRAMMING: "Vanilla Programming", // No external modules
-} as const
-
-type TagType = typeof TAGS[keyof typeof TAGS]
-
-// Tag colors
-const TAG_COLORS: Record<TagType, string> = {
-  "SDE": "#007bff", // Blue
-  "Analytics": "#7aff33", // Green
-  "Web Scraping": "#17a2b8", // Cyan
-  "ML_DL": "#ff5733", // Orange-Red
-  "NLP": "#8e44ad", // Purple
-  "CV": "#ff33ff", // PINK
-  "Vanilla Programming": "#97f236", // RED
-}
-
-interface Project {
-  name: string
-  description: string
-  tags: TagType[]
-  repoLink: string
-}
-
-// List of Projects (Reversed Order)
-const projects: Project[] = [
-  {
-    name: "Waveform Music Recommendation System",
-    description: "Created a music recommendation system based on waveform analysis.",
-    tags: [TAGS.ML_DL],
-    repoLink: "https://github.com/ShubhPundir/Waveform-Music-Recommendation-System",
-  },
-  {
-    name: "SimpleDB",
-    description: "Built a lightweight database system with CRUD operations.",
-    tags: [TAGS.SDE, TAGS.VANILLA_PROGRAMMING],
-    repoLink: "https://github.com/ShubhPundir/SimpleDB",
-  },
-  {
-    name: "MediRecord",
-    description: "Developed a full-stack medical record management system.",
-    tags: [TAGS.SDE],
-    repoLink: "https://github.com/ShubhPundir/MediRecord",
-  },
-  {
-    name: "Microsoft-Malware-Prediction",
-    description: "Predicted malware threats using machine learning techniques.",
-    tags: [TAGS.ML_DL],
-    repoLink: "https://github.com/ShubhPundir/Microsoft-Malware-Prediction",
-  },
-  {
-    name: "Tableau-YouTube-Data-Analysis",
-    description: "Created interactive Tableau dashboards for YouTube data.",
-    tags: [TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/Tableau-YouTube-Data-Analysis",
-  },
-  {
-    name: "Food-Stat",
-    description: "Analyzed food consumption trends using statistical models.",
-    tags: [TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/Food-Stat",
-  },
-  {
-    name: "PII deIdentification",
-    description: "Built a system to anonymize personally identifiable information (PII).",
-    tags: [TAGS.NLP],
-    repoLink: "https://github.com/ShubhPundir/PII-deIdentification",
-  },
-  {
-    name: "Time-Table Scheduling",
-    description: "Developed an algorithm for efficient timetable scheduling.",
-    tags: [TAGS.SDE, TAGS.VANILLA_PROGRAMMING],
-    repoLink: "https://github.com/ShubhPundir/Time-Table-Scheduling",
-  },
-  {
-    name: "Topic-Modelling Analysis",
-    description: "Applied NLP techniques to identify topics in large text corpora.",
-    tags: [TAGS.NLP, TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/Topic-Modelling-Analysis",
-  },
-  {
-    name: "Image-Caption Generator",
-    description: "Built a deep learning model to generate image captions.",
-    tags: [TAGS.ML_DL, TAGS.CV],
-    repoLink: "https://github.com/ShubhPundir/Image-Caption-Generator",
-  },
-  {
-    name: "YOLO Drowsiness",
-    description: "Implemented a YOLO-based drowsiness detection system.",
-    tags: [TAGS.ML_DL, TAGS.CV],
-    repoLink: "https://github.com/ShubhPundir/YOLO-Drowsiness",
-  },
-  {
-    name: "Sentiment Score WebApp",
-    description: "Developed a web app for sentiment analysis of text data.",
-    tags: [TAGS.ML_DL, TAGS.NLP, TAGS.SDE],
-    repoLink: "https://github.com/ShubhPundir/Sentiment-Score-WebApp",
-  },
-  {
-    name: "Rental-Apartment-Regressor",
-    description: "Created a predictive model for estimating apartment rental prices.",
-    tags: [TAGS.ML_DL],
-    repoLink: "https://github.com/ShubhPundir/Rental-Apartment-Regressor",
-  },
-  {
-    name: "YouTube-Spam Filter",
-    description: "Built an ML model to detect spam comments on YouTube videos.",
-    tags: [TAGS.ML_DL, TAGS.NLP],
-    repoLink: "https://github.com/ShubhPundir/YouTube-Spam-Filter",
-  },
-  {
-    name: "Caffe-Management",
-    description: "Developed a full-stack cafe management system.",
-    tags: [TAGS.SDE],
-    repoLink: "https://github.com/ShubhPundir/Caffe-Management",
-  },
-  {
-    name: "Glassdoor Job Profiling Recommendation System",
-    description: "Designed a system to recommend jobs based on Glassdoor profiles.",
-    tags: [TAGS.ML_DL, TAGS.NLP],
-    repoLink: "https://github.com/ShubhPundir/Glassdoor-Job-Profiling-Recommendation-System",
-  },
-  {
-    name: "CarPrice Regressor",
-    description: "Built a machine learning model to predict car prices based on features.",
-    tags: [TAGS.ML_DL],
-    repoLink: "https://github.com/ShubhPundir/CarPrice-Regressor",
-  },
-  {
-    name: "iNeuronStoreAnalysis",
-    description: "Developed insights into iNeuron's product sales and customer behavior.",
-    tags: [TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/iNeuronStoreAnalysis",
-  },
-  {
-    name: "Stores-Sales-Analysis + Market-Analysis",
-    description: "Performed exploratory data analysis on sales and market trends.",
-    tags: [TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/Stores-Sales-Analysis-Market-Analysis",
-  },
-  {
-    name: "Student Expenditure Analysis",
-    description: "Analyzed student spending patterns using statistical methods.",
-    tags: [TAGS.ANALYTICS],
-    repoLink: "https://github.com/ShubhPundir/Student-Expenditure-Analysis",
-  },
-]
-
-// Extract all unique tags
-const allTags = Object.values(TAGS)
+import ProjectCard from './projects/ProjectCard'
+import TagFilter from './projects/TagFilter'
+import { projects } from './projects/projectsData'
+import { TagType } from './projects/types'
 
 const AllProjects = () => {
   const [selectedTags, setSelectedTags] = useState<TagType[]>([])
@@ -177,51 +23,37 @@ const AllProjects = () => {
       : projects.filter((project) => project.tags.some((tag) => selectedTags.includes(tag)))
 
   return (
-    <div className="p-5">
-      <h1>All Projects</h1>
+    <div className="min-h-screen bg-[#f8f9fa] py-8 px-5">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-[#333] mb-2">All Projects</h1>
+        <p className="text-[#666] text-lg">
+          {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'} found
+          {selectedTags.length > 0 && ` (filtered by ${selectedTags.length} ${selectedTags.length === 1 ? 'tag' : 'tags'})`}
+        </p>
+      </div>
 
       {/* Tag Filters */}
-      <div className="flex flex-wrap gap-[10px] mb-5">
-        {allTags.map((tag) => (
-          <label key={tag} className="flex items-center gap-[5px] cursor-pointer">
-            <input
-              type="checkbox"
-              value={tag}
-              checked={selectedTags.includes(tag)}
-              onChange={() => toggleTag(tag)}
-            />
-            <span className="py-[5px] px-[10px] rounded-[5px] font-bold text-white" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
-              {tag}
-            </span>
-          </label>
-        ))}
-      </div>
+      <TagFilter selectedTags={selectedTags} onToggleTag={toggleTag} />
 
-      {/* Project List (Horizontal Layout) */}
-      <div className="flex flex-wrap gap-5 justify-start">
-        {filteredProjects.map((project, index) => (
-          <div key={index} className="flex-1 min-w-[300px] bg-white p-[15px] rounded-[10px] shadow-[0_2px_5px_rgba(0,0,0,0.1)] flex flex-col justify-between">
-            {/* Left Side: Name & Description */}
-            <div className="flex-grow">
-              <h3>
-                <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="text-[#007bff] text-lg font-bold no-underline">
-                  {project.name}
-                </a>
-              </h3>
-              <p className="text-sm text-[#555]">{project.description}</p>
-            </div>
-
-            {/* Right Side: Tags */}
-            <div className="flex gap-[5px] flex-wrap mt-[10px]">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="py-[5px] px-[10px] rounded-[5px] font-bold text-white text-xs" style={{ backgroundColor: TAG_COLORS[tag] || "#000000" }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Project Grid */}
+      {filteredProjects.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12 bg-white rounded-lg shadow-sm">
+          <p className="text-[#666] text-lg">No projects found matching the selected tags.</p>
+          <button
+            onClick={() => setSelectedTags([])}
+            className="mt-4 text-[#007bff] hover:underline"
+          >
+            Clear all filters
+          </button>
+        </div>
+      )}
     </div>
   )
 }
