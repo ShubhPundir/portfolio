@@ -1,41 +1,54 @@
+import Card from './Card'
+
 const WorkExperience = () => {
   return (
     <section className="text-center py-[10px] px-[5%] bg-white">
       <h2 className="text-[28px] text-[#333] mb-5">Work Experience</h2>
-      <div className="flex justify-around gap-5 flex-wrap md:flex-col md:items-center">
-        
-        <div className="flex-1 min-w-[300px] max-w-[320px] bg-[#f8f9fa] p-[15px] rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-center text-[#333] md:w-[80%]">
-          <h3 className="text-lg text-[#007bff] mb-[5px]">Junior Java Developer Intern</h3>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Company:</strong> TEN: The Entrepreneurship Network</p>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Duration:</strong> Sep 2021 - Nov 2021</p>
-          <ul className="text-left text-sm text-[#555]">
-            <li>Analyzed requirements and planned SRS for multi-media organizations.</li>
-            <li>Implemented REST APIs and optimized database queries for payment gateways via RazorPay.</li>
-            <li>Worked on performance improvements and bug fixes resolving to a 20% improvement in backend lags.</li>
+      <div className="flex flex-row justify-center items-start gap-5 flex-nowrap">
+        <Card 
+          title="Junior Java Developer Intern" 
+          bgColor="gray" 
+          textAlign="center"
+          className="flex-1 min-h-[400px]"
+        >
+          <ul className="text-left text-sm text-[#555] list-disc pl-5 space-y-1">
+            <strong>Company:</strong> TEN: The Entrepreneurship Network<br/>
+            <strong>Duration:</strong> Sep 2021 - Nov 2021<br/>
+            <li>Analyzed requirements and planned <strong>SRS</strong> for multi-media organizations.</li>
+            <li>Implemented <strong>REST APIs</strong> and optimized database queries for payment gateways via <strong>RazorPay</strong>.</li>
+            <li>Worked on performance improvements and bug fixes resolving to a <strong>20% improvement</strong> in backend lags.</li>
           </ul>
-        </div>
+        </Card>
 
-        <div className="flex-1 min-w-[300px] max-w-[320px] bg-[#f8f9fa] p-[15px] rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-center text-[#333] md:w-[80%]">
-          <h3 className="text-lg text-[#007bff] mb-[5px]">Machine Learning Engineer</h3>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Company:</strong> WDS: Wiz Digital Services</p>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Duration:</strong> Jan 2024 - May 2024</p>
-          <ul className="text-left text-sm text-[#555]">
-            <li>Implemented NLU and NLP techniques on multiple clientele dataset to encrpyt and safeguard sensitive information with an accuracy of 92%</li>
-            <li>Collaborated with cross functional teams to integrate privacy-preserving techniques seamlessly into legacy and existing systems.</li>
-            <li>Deployed end to end chatbot services and fine tuned open source LLMs to drive customer satisfaction close to 75% .</li>
+        <Card 
+          title="Machine Learning Engineer" 
+          bgColor="gray" 
+          textAlign="center"
+          className="flex-1 min-h-[400px]"
+        >
+          <ul className="text-left text-sm text-[#555] list-disc pl-5 space-y-1">
+            <strong>Company:</strong> WDS: Wiz Digital Services<br/>
+            <strong>Duration:</strong> Jan 2024 - May 2024<br/>
+            <li>Implemented <strong>NLU and NLP</strong> techniques on multiple clientele dataset to encrypt and safeguard sensitive information with an accuracy of <strong>92%</strong></li>
+            <li>Collaborated with cross functional teams to integrate <strong>privacy-preserving techniques</strong> seamlessly into legacy and existing systems.</li>
+            <li>Deployed end to end <strong>chatbot services</strong> and fine tuned open source <strong>LLMs</strong> to drive customer satisfaction close to <strong>75%</strong>.</li>
           </ul>
-        </div>
+        </Card>
 
-        <div className="flex-1 min-w-[300px] max-w-[320px] bg-[#f8f9fa] p-[15px] rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.1)] text-center text-[#333] md:w-[80%]">
-          <h3 className="text-lg text-[#007bff] mb-[5px]">Freelancer</h3>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Company:</strong> Self Employed</p>
-          <p className="text-sm text-[#555] my-[3px]"><strong>Duration:</strong> Jan 2022 - Present</p>
-          <ul className="text-left text-sm text-[#555]">
-            <li>Scraped/Crawled data for multiple clients producing tangible and meaningful business insights.</li>
-            <li>Developed ETL data pipelines for text preprocessing for Big Data.</li>
-            <li>Developed Real Time Dashboards onto Full-Stack applications from IOT Senors, Distributed Management Services, etc</li>
+        <Card 
+          title="Freelancer" 
+          bgColor="gray" 
+          textAlign="center"
+          className="flex-1 min-h-[400px]"
+        >
+          <ul className="text-left text-sm text-[#555] list-disc pl-5 space-y-1">
+            <strong>Company:</strong> Self Employed<br/>
+            <strong>Duration:</strong> Jan 2022 - Present<br/>
+            <li>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</li>
+            <li>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</li>
+            <li>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</li>
           </ul>
-        </div>
+        </Card>
       </div>
     </section>
   )
