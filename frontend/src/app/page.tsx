@@ -1,10 +1,10 @@
 import Hero from '@/app/_sections/Hero'
-import Education from '@/components/Education'
+import Education from '@/app/_sections/Education'
 import WorkExperience from '@/app/_sections/WorkExperience'
 import Projects from '@/components/Projects'
 import Skills from '@/app/_sections/Skills'
-import Certifications from '@/components/Certifications'
-import Contact from '@/components/Contact'
+import Certifications from '@/app/_sections/Certifications'
+import Contact from '@/app/_sections/Contact'
 import Navbar from '@/components/Navbar'
 
 export default function Home() {
