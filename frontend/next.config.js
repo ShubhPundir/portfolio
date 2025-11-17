@@ -1,16 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  output: 'export', // For static export (GitHub Pages)
+  output: "export",
+  basePath: "/portfolio",
+  assetPrefix: "/portfolio/",
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true
   },
-  // GitHub Pages configuration - matches repository name
-  // Always use basePath for GitHub Pages deployment
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio/',
-  trailingSlash: true, // Recommended for GitHub Pages
-}
+  trailingSlash: true,
+};
 
-module.exports = nextConfig
-
+module.exports = nextConfig;
