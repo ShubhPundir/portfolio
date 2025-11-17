@@ -18,8 +18,15 @@ const TimelineItem = ({ title, company, duration, description, isLast = false, i
     <div className="relative flex gap-6 pb-8">
       {/* Timeline Line */}
       {!isLast && (
-        <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#007bff] to-gray-300"></div>
+        <div className="absolute left-[140px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#007bff] to-gray-300"></div>
       )}
+
+      {/* Date on Left */}
+      <div className="w-32 flex-shrink-0 pt-1">
+        <div className="text-right">
+          <div className="text-sm font-semibold text-[#007bff]">{duration}</div>
+        </div>
+      </div>
 
       {/* Timeline Dot */}
       <div className="relative z-10 flex-shrink-0">
@@ -38,8 +45,6 @@ const TimelineItem = ({ title, company, duration, description, isLast = false, i
             </h3>
             <div className="flex flex-wrap gap-3 items-center text-sm">
               <span className="text-[#007bff] font-semibold">{company}</span>
-              <span className="text-[#666]">•</span>
-              <span className="text-[#666]">{duration}</span>
             </div>
           </div>
 

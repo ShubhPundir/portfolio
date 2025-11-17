@@ -26,19 +26,22 @@ const SectionCard = ({
       {/* Gradient Accent Bar */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#007bff] via-[#0056b3] to-[#007bff] rounded-t-xl"></div>
       
-      {/* Icon */}
-      {icon && (
-        <div className="mb-4">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#007bff] to-[#0056b3] flex items-center justify-center text-white shadow-md">
-            {icon}
-          </div>
-        </div>
-      )}
+      {/* Header: Title and Icon */}
+      <div className="flex items-start justify-between mb-4">
+        {/* Title */}
+        <h3 className="text-xl font-bold text-[#333] group-hover:text-[#007bff] transition-colors duration-200 flex-1">
+          {title}
+        </h3>
 
-      {/* Title */}
-      <h3 className="text-xl font-bold text-[#333] mb-2 group-hover:text-[#007bff] transition-colors duration-200">
-        {title}
-      </h3>
+        {/* Icon */}
+        {icon && (
+          <div className="flex-shrink-0 ml-4">
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#007bff] to-[#0056b3] flex items-center justify-center text-white shadow-md">
+              {icon}
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Subtitle */}
       {subtitle && (

@@ -3,6 +3,50 @@ import Timeline from '../../components/ui/Timeline'
 const WorkExperience = () => {
   const experiences = [
     {
+      title: "Software Engineer Intern",
+      company: "MYTL Technologies",
+      duration: "Aug 2025 - Present",
+      icon: "🚀",
+      description: (
+        <ul className="list-none space-y-2 text-sm">
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Worked on the product of BodhiAnalytics and DIAL.ai for improving the call reliability and performance by refactoring the <strong>SIP communication stack</strong> into a production-grade microservice ecosystem using Drachtio and FreeSWITCH, improving call reliability for users.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Enhanced internal <strong>Analytics Engine</strong> by fine-tuning a <strong>BERT-based Intent Classifier</strong>, reducing redundant RAG calls by <strong>40%</strong> and improving intent detection accuracy for inbound knowledge base screening.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Optimized real-time call performance by reducing <strong>SIP latency by 30%</strong> through debugging and streamlining Redis Streams and WebSocket event handling for OpenAI's Realtime API integration.</span>
+          </li>
+        </ul>
+      )
+    },
+    {
+      title: "Data Engineering Intern",
+      company: "VTPL: Vareli Tecsoft Pvt. Ltd.",
+      duration: "Jun 2025 - Jul 2025",
+      icon: "📊",
+      description: (
+        <ul className="list-none space-y-2 text-sm">
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Analyzed service call transaction logs and developed a comprehensive dashboard using <strong>Tableau</strong>.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Translated client requirements into actionable specifications, leading to the successful development of multiple concept documents.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Developed a <strong>Django-based asset management framework</strong>, integrating <strong>Win32 API</strong> for device registration and software patch management.</span>
+          </li>
+        </ul>
+      )
+    },
+    {
       title: "Freelancer",
       company: "Self Employed",
       duration: "Jan 2022 - Present",
@@ -72,7 +116,7 @@ const WorkExperience = () => {
 
   return (
     <section id="experience" className="py-16 px-5 bg-white">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-[#333] mb-3">Work Experience</h2>
           <p className="text-[#666] text-lg">Professional journey and key achievements</p>

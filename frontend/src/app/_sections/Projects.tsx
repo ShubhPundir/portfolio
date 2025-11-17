@@ -47,17 +47,20 @@ const Projects = () => {
               
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-grow">
-                {/* Project Icon/Emoji Placeholder */}
-                <div className="mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#007bff] to-[#0056b3] flex items-center justify-center text-white text-xl font-bold shadow-md">
-                    {project.title.charAt(0)}
+                {/* Header: Title and Icon */}
+                <div className="flex items-start justify-between mb-4">
+                  {/* Project Title */}
+                  <h3 className="text-xl font-bold text-[#333] group-hover:text-[#007bff] transition-colors duration-200 flex-1">
+                    {project.title}
+                  </h3>
+
+                  {/* Project Icon/Emoji Placeholder */}
+                  <div className="flex-shrink-0 ml-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#007bff] to-[#0056b3] flex items-center justify-center text-white text-xl font-bold shadow-md">
+                      {project.title.charAt(0)}
+                    </div>
                   </div>
                 </div>
-
-                {/* Project Title */}
-                <h3 className="text-xl font-bold text-[#333] mb-3 group-hover:text-[#007bff] transition-colors duration-200">
-                  {project.title}
-                </h3>
 
                 {/* Project Description */}
                 <p className="text-[#666] leading-relaxed mb-6 flex-grow text-sm">

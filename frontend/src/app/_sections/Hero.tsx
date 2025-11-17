@@ -31,7 +31,7 @@ const Hero = () => {
             <strong className="text-white"> Data Engineering</strong>, I specialize in designing and optimizing intelligent systems.
             With a strong foundation in Data Analytics and Software Engineering, 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
-            Over the past two years, I have successfully delivered close to <strong className="text-white">10 freelanced projects</strong>, 
+            Over the past two years, I have successfully delivered close to <strong className="text-white">10+ freelanced projects</strong>, 
             gaining expertise in end-to-end development, problem-solving, and client collaboration.
           </p>
 
