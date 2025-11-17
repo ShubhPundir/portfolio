@@ -8,7 +8,7 @@ const nextConfig = {
   // GitHub Pages configuration - matches repository name
   // Always use basePath for GitHub Pages deployment
   basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  assetPrefix: '/portfolio/',
   trailingSlash: true, // Recommended for GitHub Pages
 }
 
