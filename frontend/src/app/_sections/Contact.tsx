@@ -47,7 +47,7 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-[#333] mb-3">Get In Touch</h2>
-          <p className="text-[#666] text-lg">Let's connect and discuss opportunities</p>
+          <p className="text-[#666] text-lg">Let&apos;s connect and discuss opportunities</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

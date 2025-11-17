@@ -19,7 +19,7 @@ const WorkExperience = () => {
           </li>
           <li className="flex items-start gap-2">
             <span className="text-[#007bff] mt-1">▸</span>
-            <span>Optimized real-time call performance by reducing <strong>SIP latency by 30%</strong> through debugging and streamlining Redis Streams and WebSocket event handling for OpenAI's Realtime API integration.</span>
+            <span>Optimized real-time call performance by reducing <strong>SIP latency by 30%</strong> through debugging and streamlining Redis Streams and WebSocket event handling for OpenAI&apos;s Realtime API integration.</span>
           </li>
         </ul>
       )

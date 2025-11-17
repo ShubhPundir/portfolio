@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import FreelanceTimeline, { type FreelanceProject } from '@/components/ui/FreelanceTimeline'
+import Link from 'next/link'
 
 const Freelancing = () => {
   const projects: FreelanceProject[] = [
@@ -166,12 +167,12 @@ const Freelancing = () => {
             {/* Contact Note at Top */}
             <div className="text-center">
               <p className="text-sm text-[#666]">
-                <a 
+                <Link 
                   href="/#contact" 
                   className="text-[#007bff] hover:text-[#0056b3] hover:underline font-medium transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
                 {' '}for names and references
               </p>
             </div>
@@ -183,12 +184,12 @@ const Freelancing = () => {
           {/* Contact Note at Bottom */}
           <div className="mt-12 text-center mb-8">
             <p className="text-sm text-[#666]">
-              <a 
+              <Link 
                 href="/#contact" 
                 className="text-[#007bff] hover:text-[#0056b3] hover:underline font-medium transition-colors"
               >
                 Contact
-              </a>
+              </Link>
               {' '}for names and references
             </p>
           </div>
