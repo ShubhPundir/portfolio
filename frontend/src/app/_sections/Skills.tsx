@@ -1,4 +1,4 @@
-import SkillCard from './SkillCard'
+import SkillCard from '../../components/skills/SkillCard'
 
 const Skills = () => {
   return (

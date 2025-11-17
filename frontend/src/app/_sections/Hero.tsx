@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import myPhoto from '../assets/formal-pic.jpg'
+import myPhoto from '../../assets/formal-pic.jpg'
 
 const Hero = () => {
   return (
