@@ -1,7 +1,36 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import myPhoto from '../../assets/formal-pic.jpg'
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('')
+  const hasAnimated = useRef(false)
+  const fullText = 'Backend + AI Engineer'
+
+  useEffect(() => {
+    // Only animate on first load
+    if (hasAnimated.current) {
+      setDisplayedText(fullText)
+      return
+    }
+
+    hasAnimated.current = true
+    let currentIndex = 0
+
+    const typingInterval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex + 1))
+        currentIndex++
+      } else {
+        clearInterval(typingInterval)
+      }
+    }, 100) // Typing speed: 100ms per character
+
+    return () => clearInterval(typingInterval)
+  }, [fullText])
+
   return (
     <section className="relative flex justify-center py-20 px-5 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white min-h-[90vh] items-center overflow-hidden">
       {/* Background Pattern */}
@@ -16,9 +45,12 @@ const Hero = () => {
         
         {/* LEFT COLUMN — Description + Buttons */}
         <div className="flex-1 flex flex-col space-y-6 min-w-[300px]">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#007bff]/20 rounded-full border border-[#007bff]/30 mb-2 w-fit">
-            <span className="text-sm font-medium text-[#007bff]">Backend + AI Engineer</span>
-          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 w-fit">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007bff] via-[#0056b3] to-[#007bff]">
+              {displayedText}
+            </span>
+            <span className="text-white animate-pulse">|</span>
+          </h2>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f0a500] to-[#ffbb33]">Shubh Pundir</span>
@@ -28,10 +60,9 @@ const Hero = () => {
             Passionate about <strong className="text-white">project-based learning</strong>, I thrive on turning 
             ideas into real-world solutions. With hands-on experience in 
             <strong className="text-white"> Natural Language Processing (NLP)</strong>, <strong className="text-white">LLM Tuning</strong>, and 
-            <strong className="text-white"> Data Engineering</strong>, I specialize in designing and optimizing intelligent systems.
-            With a strong foundation in Data Analytics and Software Engineering, 
+            <strong className="text-white"> Software Engineering</strong>, I specialize in designing and optimizing scalable and distributed systems. 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
-            Over the past two years, I have successfully delivered close to <strong className="text-white">10+ freelanced projects</strong>, 
+            Since 2020, I have successfully delivered close to <strong className="text-white">13 freelanced projects</strong>, 
             gaining expertise in end-to-end development, problem-solving, and client collaboration.
           </p>
 
