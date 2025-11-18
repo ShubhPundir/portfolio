@@ -23,6 +23,16 @@ export const projects: Project[] = [
     repoLink: "https://github.com/ShubhPundir/CNN-Genre-Prediction",
   },
   {
+    name: "Food-Stat",
+    description: (
+      <>
+        Built a <strong>full-stack application</strong> that scans <strong>barcodes</strong> or <strong>nutritional labels</strong> of packaged food items and evaluates whether the food is good for you, personalizing recommendations with your diet plan. Allows users to create and follow personalized <strong>diet plans</strong> with intelligent nutritional analysis and recommendations.
+      </>
+    ),
+    tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.NLP, TAGS.CV, TAGS.SDE],
+    repoLink: "https://github.com/TeslaC00/Food-Stat",
+  },
+  {
     name: "FIND-DB",
     description: (
       <>
@@ -33,6 +43,16 @@ export const projects: Project[] = [
     repoLink: "https://github.com/ShubhPundir/Find-DB",
   },
   {
+    name: "Mudda - A social media platform for civic issues",
+    description: (
+      <>
+        Built a <strong>social media platform for civic issues</strong> for transparency and accountability. Developed a robust and dynamic <strong>AI workflow engine</strong> to automate the process of issue resolution and administration.
+      </>
+    ),
+    tags: [TAGS.SDE, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
+    repoLink: "https://github.com/Cipher3003/Mudda",
+  },
+  {
     name: "MediRecord",
     description: (
       <>
@@ -41,6 +61,16 @@ export const projects: Project[] = [
     ),
     tags: [TAGS.SDE, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
     repoLink: "https://github.com/ShubhPundir/MediRecord",
+  },
+  {
+    name: "Delhi NCR AQI Assessment",
+    description: (
+      <>
+        Analyzed air quality data for Delhi-NCR using <strong>statistical models</strong>. Ground CPCB data, <strong>Sentinel-5P Google Earth Engine</strong> data, hyperlocal context data from OSMX and weatherdata from IMD for analysis and making a dashboard for better visualization.
+      </>
+    ),
+    tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.CV],
+    repoLink: "https://github.com/anjorisarabhai/Delhi-NCR-AQI-Assessment",
   },
   {
     name: "Microsoft-Malware-Prediction",
@@ -61,16 +91,6 @@ export const projects: Project[] = [
     ),
     tags: [TAGS.ANALYTICS],
     repoLink: "https://github.com/ShubhPundir/Tableau-YouTube-Data-Analysis",
-  },
-  {
-    name: "Food-Stat",
-    description: (
-      <>
-        Analyzed food consumption trends using <strong>statistical models</strong>. Built a <strong>full-stack application</strong> with <strong>computer vision</strong> for food image recognition, <strong>NLP</strong> for recipe analysis, and <strong>machine learning</strong> models for nutritional prediction and dietary recommendations.
-      </>
-    ),
-    tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.NLP, TAGS.CV, TAGS.SDE],
-    repoLink: "https://github.com/TeslaC00/Food-Stat",
   },
   {
     name: "PII deIdentification",
