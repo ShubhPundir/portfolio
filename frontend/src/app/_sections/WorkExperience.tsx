@@ -115,7 +115,7 @@ const WorkExperience = () => {
   ]
 
   return (
-    <section id="experience" className="py-16 px-5 bg-white">
+    <section id="work-experience" className="py-16 px-5 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-[#333] mb-3">Work Experience</h2>

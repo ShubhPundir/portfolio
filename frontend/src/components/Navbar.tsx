@@ -1,6 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import NavLink from './NavLink'
+
+const navItems = [
+  { href: '/#skills', label: 'Skills' },
+  { href: '/allprojects', label: 'All Projects' },
+  { href: '/freelancing', label: 'Freelancing' },
+  { href: '/#contact', label: 'Contact' },
+]
 
 const Navbar = () => {
   return (
@@ -10,22 +18,11 @@ const Navbar = () => {
           <Link href="/" className="text-white no-underline">My Portfolio</Link>
         </h1>
         <ul className="list-none flex gap-[30px] flex-wrap mr-[10px] items-center">
-          <li className="relative group">
-            <Link href="/#skills" className="no-underline text-white text-lg font-normal py-2 px-3 transition-colors duration-300 hover:text-[#f0a500]">Skills</Link>
-            <span className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#f0a500] transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="relative group">
-            <Link href="/allprojects" className="no-underline text-white text-lg font-normal py-2 px-3 transition-colors duration-300 hover:text-[#f0a500]">All Projects</Link>
-            <span className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#f0a500] transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="relative group">
-            <Link href="/freelancing" className="no-underline text-white text-lg font-normal py-2 px-3 transition-colors duration-300 hover:text-[#f0a500]">Freelancing</Link>
-            <span className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#f0a500] transition-all duration-300 group-hover:w-full"></span>
-          </li>
-          <li className="relative group">
-            <Link href="/#contact" className="no-underline text-white text-lg font-normal py-2 px-3 transition-colors duration-300 hover:text-[#f0a500]">Contact</Link>
-            <span className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#f0a500] transition-all duration-300 group-hover:w-full"></span>
-          </li>
+          {navItems.map((item) => (
+            <NavLink key={item.href} href={item.href}>
+              {item.label}
+            </NavLink>
+          ))}
         </ul>
       </nav>
       <div className="mt-20"></div>
