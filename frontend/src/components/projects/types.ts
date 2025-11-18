@@ -21,7 +21,7 @@ export const TAG_COLORS: Record<TagType, string> = {
   "ML/DL": "#ff5733", // Orange-Red
   "NLP": "#8e44ad", // Purple
   "CV": "#ff33ff", // Pink
-  "Vanilla Programming": "#97f236", // Light Green
+  "Vanilla Programming": "#ff0000", // Red
 }
 
 export interface Project {
