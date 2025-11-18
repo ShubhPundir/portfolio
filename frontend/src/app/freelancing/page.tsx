@@ -156,33 +156,15 @@ const Freelancing = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-[#f8f9fa] to-white pt-20">
-        <div className="max-w-6xl mx-auto px-5 py-16">
+      <section id="freelancing" className="py-16 px-5 bg-gradient-to-b from-white to-[#f8f9fa] pt-20">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold text-[#333] mb-4">Freelance Portfolio</h1>
-            <p className="text-xl text-[#666] max-w-3xl mx-auto mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#333] mb-3">Freelance Portfolio</h2>
+            <p className="text-[#666] text-lg mb-4">
               A curated list of freelance projects completed since 1st year of college, highlighting cross-domain problem solving, dashboard building, data wrangling, and automation.
             </p>
-            {/* Contact Note at Top */}
-            <div className="text-center">
-              <p className="text-sm text-[#666]">
-                <Link 
-                  href="/#contact" 
-                  className="text-[#007bff] hover:text-[#0056b3] hover:underline font-medium transition-colors"
-                >
-                  Contact
-                </Link>
-                {' '}for names and references
-              </p>
-            </div>
-          </div>
-
-          {/* Timeline */}
-          <FreelanceTimeline projects={sortedProjects} />
-
-          {/* Contact Note at Bottom */}
-          <div className="mt-12 text-center mb-8">
+            {/* Contact Note */}
             <p className="text-sm text-[#666]">
               <Link 
                 href="/#contact" 
@@ -194,15 +176,18 @@ const Freelancing = () => {
             </p>
           </div>
 
+          {/* Timeline */}
+          <FreelanceTimeline projects={sortedProjects} />
+
           {/* Summary Footer */}
-          <div className="mt-8 text-center">
+          <div className="mt-12 text-center">
             <div className="inline-block px-8 py-6 bg-gradient-to-r from-[#007bff] to-[#0056b3] rounded-xl text-white shadow-lg">
               <p className="text-2xl font-bold mb-2">11 Projects Completed</p>
               <p className="text-lg opacity-90">Delivering quality solutions across diverse domains</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }
