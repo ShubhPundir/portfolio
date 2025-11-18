@@ -1,7 +1,8 @@
 import Timeline from '../../components/ui/Timeline'
+import { Experience } from '@/components/projects/types'
 
 const WorkExperience = () => {
-  const experiences = [
+  const experiences: Experience[] = [
     {
       title: "Software Engineer Intern",
       company: "MYTL Technologies",
