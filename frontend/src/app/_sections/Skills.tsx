@@ -14,32 +14,38 @@ const Skills = () => {
         "Data Science",
         "Data Analytics/Wrangling",
         "Business Intelligence",
+        "Web Scraping",
         "Master Data Management",
+        "Databases",
         "Machine Learning/Deep Learning",
         "Natural Language Processing",
         "Recommendation Engines",
-        "Web Scraping",
-        "Databases"
+        "LLM Tuning",
+        "RAG over document"
       ]
     },
     {
       title: "Frameworks",
       icon: "⚙️",
       items: [
-        "Springboot MVC",
-        "Django & Flask",
+        "Springboot",
+        "Django & FastAPI",
         "Node.js & Express.js",
-        "MS SQL/MongoDB/Cassandra",
+        "MS SQL/ PostgreSQL",
+        "MongoDB/Cassandra",
         "Tensorflow & Pytorch",
         "OpenCV & EasyOCR",
-        "AWS/Azure Deployment",
+        "LangChain/LangGraph",
+        "QdrantDB/Pinecone",
+        "AWS/ Azure",
+        "Elasticsearch/ OpenSearch",
         "Apache Hadoop Ecosystem"
       ]
     },
     {
       title: "Tools",
       icon: "🛠️",
-      items: ["Git & GitHub", "PowerBI & Tableau", "MS Excel", "Postman", "Figma"]
+      items: ["Git & GitHub", "PowerBI", "Tableau", "MS Excel", "Postman", "Figma"]
     },
     {
       title: "Soft Skills",
