@@ -7,6 +7,7 @@ const WorkExperience = () => {
       company: "MYTL Technologies",
       duration: "Aug 2025 - Present",
       icon: "🚀",
+      link: "http://bodhianalytics.in/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
@@ -29,6 +30,7 @@ const WorkExperience = () => {
       company: "VTPL: Vareli Tecsoft Pvt. Ltd.",
       duration: "Jun 2025 - Jul 2025",
       icon: "📊",
+      link: "https://www.varelitecsoft.com/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
@@ -51,6 +53,7 @@ const WorkExperience = () => {
       company: "Self Employed",
       duration: "Jan 2022 - Present",
       icon: "💼",
+      link: "https://shubhpundir.github.io/portfolio/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
@@ -73,6 +76,7 @@ const WorkExperience = () => {
       company: "WDS: Wiz Digital Services",
       duration: "Jan 2024 - May 2024",
       icon: "🤖",
+      link: "https://www.wizdigital.ie/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
@@ -95,6 +99,7 @@ const WorkExperience = () => {
       company: "TEN: The Entrepreneurship Network",
       duration: "Sep 2021 - Nov 2021",
       icon: "☕",
+      link: "https://www.entrepreneurshipnetwork.net/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">

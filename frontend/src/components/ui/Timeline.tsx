@@ -7,13 +7,14 @@ interface TimelineItemProps {
   description: string | ReactNode
   isLast?: boolean
   icon?: ReactNode
+  link?: string
 }
 
 interface TimelineProps {
   items: Omit<TimelineItemProps, 'isLast'>[]
 }
 
-const TimelineItem = ({ title, company, duration, description, isLast = false, icon }: TimelineItemProps) => {
+const TimelineItem = ({ title, company, duration, description, isLast = false, icon, link }: TimelineItemProps) => {
   return (
     <div className="relative flex gap-6 pb-8">
       {/* Timeline Line */}
@@ -44,7 +45,18 @@ const TimelineItem = ({ title, company, duration, description, isLast = false, i
               {title}
             </h3>
             <div className="flex flex-wrap gap-3 items-center text-sm">
-              <span className="text-[#007bff] font-semibold">{company}</span>
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#007bff] font-semibold hover:text-[#0056b3] hover:underline transition-colors"
+                >
+                  {company}
+                </a>
+              ) : (
+                <span className="text-[#007bff] font-semibold">{company}</span>
+              )}
             </div>
           </div>
 
