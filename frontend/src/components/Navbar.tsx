@@ -4,7 +4,7 @@ import Link from 'next/link'
 import NavLink from './NavLink'
 
 const navItems = [
-  { href: '/#skills', label: 'Skills' },
+  { href: '/#work-experience', label: 'Work Experience' },
   { href: '/allprojects', label: 'All Projects' },
   { href: '/freelancing', label: 'Freelancing' },
   { href: '/#contact', label: 'Contact' },
