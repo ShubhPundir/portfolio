@@ -6,6 +6,7 @@ import NavLink from './NavLink'
 const navItems = [
   { href: '/#work-experience', label: 'Work Experience' },
   { href: '/allprojects', label: 'All Projects' },
+  { href: '/techstack', label: 'Tech Stack' },
   { href: '/freelancing', label: 'Freelancing' },
   { href: '/#contact', label: 'Contact' },
 ]

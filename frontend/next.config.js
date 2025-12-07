@@ -4,6 +4,12 @@ const nextConfig = {
   output: 'export', // For static export (GitHub Pages)
   images: {
     unoptimized: true, // Required for static export
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+      },
+    ],
   },
   // GitHub Pages configuration - matches repository name
   // Always use basePath for GitHub Pages deployment
