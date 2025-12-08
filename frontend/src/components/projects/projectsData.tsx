@@ -29,7 +29,7 @@ export const projects: Project[] = [
         Built a <strong>full-stack application</strong> that scans <strong>barcodes</strong> or <strong>nutritional labels</strong> of packaged food items and evaluates whether the food is good for you, personalizing recommendations with your diet plan. Allows users to create and follow personalized <strong>diet plans</strong> with intelligent nutritional analysis and recommendations.
       </>
     ),
-    tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.NLP, TAGS.CV, TAGS.SDE],
+    tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.NLP, TAGS.CV, TAGS.FULL_STACK],
     repoLink: "https://github.com/TeslaC00/Food-Stat",
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
         Built a lightweight database system with <strong>CRUD operations</strong>. Efficient search with <strong>B+Trees</strong>, <strong>Sharding</strong> and <strong>Replication</strong>.
       </>
     ),
-    tags: [TAGS.SDE, TAGS.VANILLA_PROGRAMMING],
+    tags: [TAGS.FULL_STACK, TAGS.VANILLA_PROGRAMMING],
     repoLink: "https://github.com/ShubhPundir/Find-DB",
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
         Built a <strong>social media platform for civic issues</strong> for transparency and accountability. Developed a robust and dynamic <strong>AI workflow engine</strong> to automate the process of issue resolution and administration.
       </>
     ),
-    tags: [TAGS.SDE, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
+    tags: [TAGS.FULL_STACK, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
     repoLink: "https://github.com/Cipher3003/Mudda",
   },
   {
@@ -59,7 +59,7 @@ export const projects: Project[] = [
         Developed a <strong>full-stack</strong> medical record management system. Added <strong>common format of medical document strategy</strong> with a smart <strong>NER (Named Entity Recognition)</strong> + <strong>CV (Computer Vision) parser</strong>.
       </>
     ),
-    tags: [TAGS.SDE, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
+    tags: [TAGS.FULL_STACK, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
     repoLink: "https://github.com/ShubhPundir/MediRecord",
   },
   {

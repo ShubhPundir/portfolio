@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 // ENUM for project tags
 export const TAGS = {
-  SDE: "SDE", // Full-stack development or end-to-end
+  FULL_STACK: "Full-Stack", // Full-stack development or end-to-end
   ANALYTICS: "Analytics",
   WEB_SCRAPING: "Web Scraping",
   ML_DL: "ML/DL", // Machine Learning or Deep Learning
@@ -15,7 +15,7 @@ export type TagType = typeof TAGS[keyof typeof TAGS]
 
 // Tag colors
 export const TAG_COLORS: Record<TagType, string> = {
-  "SDE": "#007bff", // Blue
+  "Full-Stack": "#007bff", // Blue
   "Analytics": "#7aff33", // Green
   "Web Scraping": "#17a2b8", // Cyan
   "ML/DL": "#ff5733", // Orange-Red
