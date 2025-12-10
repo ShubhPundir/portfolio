@@ -3,7 +3,9 @@ import Image from 'next/image'
 interface FreelanceProject {
   id: number
   title: string
+  clientName: string
   clientPrefix: string
+  blurClientName: boolean
   location: string
   date: string
   techStack: string[]
@@ -94,7 +96,13 @@ const TimelineItem = ({ project, isLast }: { project: FreelanceProject; isLast: 
             </div>
             <div className="flex flex-wrap gap-3 items-center text-sm">
               <span className="text-[#666]">Client:</span>
-              <BlurredClientName prefix={project.clientPrefix} />
+              {project.blurClientName ? (
+                <BlurredClientName prefix={project.clientPrefix || project.clientName} />
+              ) : (
+                <span className="text-[#007bff] font-semibold">
+                  {project.clientName}
+                </span>
+              )}
               <span className="text-[#666]">•</span>
               <span className="inline-flex items-center gap-1.5 text-[#666]">
                 <span className="text-lg">{project.flag}</span>

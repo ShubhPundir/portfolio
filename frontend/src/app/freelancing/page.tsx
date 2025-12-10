@@ -7,7 +7,9 @@ const Freelancing = () => {
     {
       id: 1,
       title: "Analysis Dashboard for Test Logs",
+      clientName: "Akande M. Eliott",
       clientPrefix: "Akan",
+      blurClientName: false,
       location: "Morocco",
       date: "December 2022",
       techStack: ["Kibana", "R", "Excel"],
@@ -19,7 +21,9 @@ const Freelancing = () => {
     {
       id: 2,
       title: "Periodic Web Scraper for Facebook Marketplace & Zillow",
+      clientName: "Addi",
       clientPrefix: "Addi",
+      blurClientName: true,
       location: "Ethiopia",
       date: "December 2022",
       techStack: ["Python", "BeautifulSoup", "ProxyMesh", "2Captcha"],
@@ -31,7 +35,9 @@ const Freelancing = () => {
     {
       id: 3,
       title: "ETL Report Generation + Power BI Dashboards",
+      clientName: "Amber P.",
       clientPrefix: "Ambe",
+      blurClientName: false,
       location: "UK",
       date: "February 2023",
       techStack: ["Power BI", "Python (Pandas)", "Excel", "SQL"],
@@ -43,7 +49,9 @@ const Freelancing = () => {
     {
       id: 4,
       title: "Power BI Dashboards + Logstash Pipelines",
+      clientName: "Francis O.",
       clientPrefix: "Fran",
+      blurClientName: false,
       location: "UAE",
       date: "February 2023",
       techStack: ["Power BI", "Logstash", "Pandas", "Cassandra"],
@@ -55,7 +63,9 @@ const Freelancing = () => {
     {
       id: 5,
       title: "Compiled Reports for Sales Performance",
-      clientPrefix: "Isha",
+      clientName: "Ishaan",
+      clientPrefix: "Ishaan",
+      blurClientName: true,
       location: "India",
       date: "May 2023",
       techStack: ["Excel", "Python (matplotlib, pandas)"],
@@ -67,7 +77,9 @@ const Freelancing = () => {
     {
       id: 6,
       title: "News & Blog Scraping with Financial Correlation",
+      clientName: "Kaml",
       clientPrefix: "Kaml",
+      blurClientName: true,
       location: "UK",
       date: "June 2023",
       techStack: ["Python", "BeautifulSoup", "yFinance", "Pandas"],
@@ -79,7 +91,9 @@ const Freelancing = () => {
     {
       id: 7,
       title: "CRM Data Wrangling & Research",
+      clientName: "Mason Richards",
       clientPrefix: "Maso",
+      blurClientName: false,
       location: "UK",
       date: "August 2023",
       techStack: ["Excel", "Python (pandas, openpyxl)", "PowerBI"],
@@ -91,7 +105,9 @@ const Freelancing = () => {
     {
       id: 8,
       title: "Customer Review Sentiment Analysis Pipeline",
+      clientName: "Aisha Benali",
       clientPrefix: "Aish",
+      blurClientName: false,
       location: "Morocco",
       date: "March 2024",
       techStack: ["Python (Transformers, BERT, FastAPI)", "React"],
@@ -103,7 +119,9 @@ const Freelancing = () => {
     {
       id: 9,
       title: "Chatbot using RASA",
+      clientName: "Colin E. Duffy",
       clientPrefix: "Coli",
+      blurClientName: false,
       location: "Denmark",
       date: "September 2024",
       techStack: ["RASA", "Cassandra", "BotPress"],
@@ -115,7 +133,9 @@ const Freelancing = () => {
     {
       id: 10,
       title: "Chatbot integration with Existing CRM System",
+      clientName: "Martin L. Sørensen",
       clientPrefix: "Mart",
+      blurClientName: false,
       location: "Denmark",
       date: "December 2024",
       techStack: ["Python", "RASA", "PostgreSQL"],
@@ -127,7 +147,9 @@ const Freelancing = () => {
     {
       id: 11,
       title: "RAG over document using Gemini",
+      clientName: "Alice Ann",
       clientPrefix: "Alic",
+      blurClientName: false,
       location: "Denmark",
       date: "February 2025",
       techStack: ["Langchain", "FASTAPI", "QdrantDB", "ReactJS", "MongoDB"],
