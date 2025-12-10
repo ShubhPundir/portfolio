@@ -62,7 +62,7 @@ const Hero = () => {
             <strong className="text-white"> Natural Language Processing (NLP)</strong>, <strong className="text-white">LLM Tuning</strong>, and 
             <strong className="text-white"> Software Engineering</strong>, I specialize in designing and optimizing scalable and distributed systems. 
             I continuously explore emerging technologies to build efficient, scalable, and impactful solutions.
-            Since 2020, I have successfully delivered close to <strong className="text-white">13 freelanced projects</strong>, 
+            Since 2020, I have successfully delivered close to <strong className="text-white">12 freelanced projects</strong>, 
             gaining expertise in end-to-end development, problem-solving, and client collaboration.
           </p>
 

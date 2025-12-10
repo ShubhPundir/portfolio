@@ -14,9 +14,7 @@ const Skills = () => {
         "Data Science",
         "Data Analytics/Wrangling",
         "Business Intelligence",
-        "Web Scraping",
-        "Master Data Management",
-        "Databases",
+        "Web Scraping/ Data Sourcing",
         "Machine Learning/Deep Learning",
         "Natural Language Processing",
         "Recommendation Engines",
@@ -30,7 +28,7 @@ const Skills = () => {
       items: [
         "Springboot",
         "Django & FastAPI",
-        "Node.js & Express.js",
+        "Nest.js & Express.js",
         "MS SQL/ PostgreSQL",
         "MongoDB/Cassandra",
         "Tensorflow & Pytorch",
@@ -45,12 +43,12 @@ const Skills = () => {
     {
       title: "Tools",
       icon: "🛠️",
-      items: ["Git & GitHub", "PowerBI", "Tableau", "MS Excel", "Postman", "Figma"]
+      items: ["Git & GitHub", "PowerBI", "Tableau", "ELK stack", "MS Excel", "Postman", "Figma"]
     },
     {
       title: "Soft Skills",
       icon: "🤝",
-      items: ["Problem-Solving", "Teamwork & Collaboration", "Adaptability", "Communication"]
+      items: ["Problem-Solving", "Teamwork & Collaboration", "Adaptability", "Communication", "Straight forward"]
     }
   ]
 
