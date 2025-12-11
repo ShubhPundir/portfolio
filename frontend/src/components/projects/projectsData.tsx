@@ -10,7 +10,7 @@ export const projects: Project[] = [
       </>
     ),
     tags: [TAGS.ML_DL, TAGS.ANALYTICS, TAGS.WEB_SCRAPING, TAGS.NLP],
-    repoLink: "https://github.com/ShubhPundir/Music-Recommendation-System",
+    repoLink: "https://github.com/ShubhPundir/Music-Recommendation-Engine",
   },
   {
     name: "CNN Music Genre Classifier",

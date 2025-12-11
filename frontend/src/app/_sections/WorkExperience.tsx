@@ -4,7 +4,7 @@ import { Experience } from '@/components/projects/types'
 const WorkExperience = () => {
   const experiences: Experience[] = [
     {
-      title: "Software Engineer Intern",
+      title: "Software Engineer",
       company: "MYTL Technologies",
       duration: "Aug 2025 - Present",
       icon: "🚀",
