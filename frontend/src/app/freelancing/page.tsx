@@ -1,8 +1,15 @@
+'use client'
+
 import Navbar from '@/components/Navbar'
 import FreelanceTimeline, { type FreelanceProject } from '@/components/ui/FreelanceTimeline'
 import Link from 'next/link'
+import { useMemo, useState } from 'react'
+import MultiSelectFilter from '@/components/ui/MultiSelectFilter'
 
 const Freelancing = () => {
+  const [selectedCountries, setSelectedCountries] = useState<string[]>([])
+  const [selectedTech, setSelectedTech] = useState<string[]>([])
+
   const projects: FreelanceProject[] = [
     {
       id: 1,
@@ -161,7 +168,7 @@ const Freelancing = () => {
   ]
 
   // Sort projects in descending chronological order (newest first)
-  const sortedProjects = [...projects].sort((a, b) => {
+  const sortedProjects = useMemo(() => {
     const parseDate = (dateStr: string) => {
       const months: { [key: string]: number } = {
         'January': 1, 'February': 2, 'March': 3, 'April': 4, 'May': 5, 'June': 6,
@@ -172,8 +179,43 @@ const Freelancing = () => {
       const year = parseInt(parts[1]) || 0
       return year * 12 + month
     }
-    return parseDate(b.date) - parseDate(a.date)
-  })
+    return [...projects].sort((a, b) => parseDate(b.date) - parseDate(a.date))
+  }, [projects])
+
+  const countryOptions = useMemo(() => {
+    const map = new Map<string, { label: string; value: string }>()
+    projects.forEach((project) => {
+      const code = project.countryCode.toLowerCase()
+      if (!map.has(code)) {
+        map.set(code, { value: code, label: `${project.flag} ${project.location}` })
+      }
+    })
+    return Array.from(map.values()).sort((a, b) => a.label.localeCompare(b.label))
+  }, [projects])
+
+  const techOptions = useMemo(() => {
+    const set = new Set<string>()
+    projects.forEach((project) => project.techStack.forEach((tech) => set.add(tech)))
+    return Array.from(set)
+      .sort((a, b) => a.localeCompare(b))
+      .map((tech) => ({ label: tech, value: tech }))
+  }, [projects])
+
+  const filteredProjects = useMemo(() => {
+    return sortedProjects.filter((project) => {
+      const countryMatch =
+        selectedCountries.length === 0 ||
+        selectedCountries.includes(project.countryCode.toLowerCase())
+
+      const techMatch =
+        selectedTech.length === 0 ||
+        selectedTech.every((tech) =>
+          project.techStack.map((t) => t.toLowerCase()).includes(tech.toLowerCase())
+        )
+
+      return countryMatch && techMatch
+    })
+  }, [selectedCountries, selectedTech, sortedProjects])
 
   return (
     <>
@@ -198,14 +240,59 @@ const Freelancing = () => {
             </p>
           </div>
 
+          {/* Filters */}
+          <div className="mb-10 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-lg font-semibold text-[#333]">Filter projects</p>
+                <p className="text-sm text-[#666]">Select one or many to narrow the list</p>
+              </div>
+              <div className="flex gap-3">
+                {(selectedCountries.length > 0 || selectedTech.length > 0) && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedCountries([])
+                      setSelectedTech([])
+                    }}
+                    className="text-sm font-medium text-[#007bff] hover:text-[#0056b3] transition-colors"
+                  >
+                    Clear all
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <MultiSelectFilter
+                label="Country"
+                options={countryOptions}
+                selected={selectedCountries}
+                onChange={setSelectedCountries}
+                placeholder="Pick one or more countries"
+              />
+              <MultiSelectFilter
+                label="Tech Stack"
+                options={techOptions}
+                selected={selectedTech}
+                onChange={setSelectedTech}
+                placeholder="Pick one or more tools"
+              />
+            </div>
+          </div>
+
           {/* Timeline */}
-          <FreelanceTimeline projects={sortedProjects} />
+          <FreelanceTimeline projects={filteredProjects} />
 
           {/* Summary Footer */}
           <div className="mt-12 text-center">
             <div className="inline-block px-8 py-6 bg-gradient-to-r from-[#007bff] to-[#0056b3] rounded-xl text-white shadow-lg">
-              <p className="text-2xl font-bold mb-2">11 Projects Completed</p>
-              <p className="text-lg opacity-90">Delivering quality solutions across diverse domains</p>
+              <p className="text-2xl font-bold mb-2">
+                {filteredProjects.length} Projects Shown
+              </p>
+              <p className="text-lg opacity-90">
+                Delivering quality solutions across diverse domains
+              </p>
             </div>
           </div>
         </div>
