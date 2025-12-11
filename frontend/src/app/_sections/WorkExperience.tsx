@@ -54,7 +54,7 @@ const WorkExperience = () => {
       company: "Self Employed",
       duration: "Jan 2022 - Present",
       icon: "💼",
-      link: "https://shubhpundir.github.io/portfolio/",
+      link: "https://shubhpundir.github.io/portfolio/freelancing",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
