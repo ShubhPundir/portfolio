@@ -278,7 +278,7 @@ const Freelancing = () => {
                 selected={selectedTech}
                 onChange={setSelectedTech}
                 placeholder="Pick one or more tools"
-                mode="inline"
+                mode="dropdown"
               />
             </div>
           </div>
