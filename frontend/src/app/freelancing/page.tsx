@@ -230,8 +230,8 @@ const Freelancing = () => {
             </p>
             {/* Contact Note */}
             <p className="text-sm text-[#666]">
-              <Link 
-                href="/#contact" 
+              <Link
+                href="/#contact"
                 className="text-[#007bff] hover:text-[#0056b3] hover:underline font-medium transition-colors"
               >
                 Contact
@@ -270,6 +270,7 @@ const Freelancing = () => {
                 selected={selectedCountries}
                 onChange={setSelectedCountries}
                 placeholder="Pick one or more countries"
+                mode="dropdown"
               />
               <MultiSelectFilter
                 label="Tech Stack"
@@ -277,6 +278,7 @@ const Freelancing = () => {
                 selected={selectedTech}
                 onChange={setSelectedTech}
                 placeholder="Pick one or more tools"
+                mode="inline"
               />
             </div>
           </div>
