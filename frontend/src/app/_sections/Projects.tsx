@@ -8,10 +8,10 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "MediRecord",
+    title: "MUDDA",
     description:
-      "A one stop spot for structured medical record system. AI powered prescription queries and results for both patients and doctors.",
-    link: "/allprojects",
+      "A civic social media platform for issue reporting and resolution. Uses AI-driven automatic workflows, NLP & CV microservices, and automated admin decisioning to detect duplicity, hate speech, and accelerate issue resolution via web and mobile apps.",
+    link: "https://mudda-dashboard.vercel.app/",
   },
   {
     title: "FIND-DB",
@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     title: "Waveform based Music Recommendation System",
     description:
-      "Managaing Big Data for both musics and users. Waveform and linguistical analysis hybridized with user preference for personalized recommendations",
+      "Managaing Big Data for both musics and users. Waveform and linguistical analysis hybridized with user preference for personalized recommendations.",
     link: "/allprojects",
   },
 ]
@@ -35,7 +35,7 @@ const Projects = () => {
           <h2 className="text-4xl font-bold text-[#333] mb-3">Featured Projects</h2>
           <p className="text-[#666] text-lg">Explore some of my recent work and innovations</p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
@@ -44,7 +44,7 @@ const Projects = () => {
             >
               {/* Card Header with Gradient Accent */}
               <div className="h-1 bg-gradient-to-r from-[#007bff] via-[#0056b3] to-[#007bff]"></div>
-              
+
               {/* Card Content */}
               <div className="p-6 flex flex-col flex-grow">
                 {/* Header: Title and Icon */}
