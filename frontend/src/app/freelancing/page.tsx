@@ -9,6 +9,8 @@ import MultiSelectFilter from '@/components/ui/MultiSelectFilter'
 const Freelancing = () => {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([])
   const [selectedTech, setSelectedTech] = useState<string[]>([])
+  const [appliedCountries, setAppliedCountries] = useState<string[]>([])
+  const [appliedTech, setAppliedTech] = useState<string[]>([])
 
   const projects: FreelanceProject[] = [
     {
@@ -204,18 +206,18 @@ const Freelancing = () => {
   const filteredProjects = useMemo(() => {
     return sortedProjects.filter((project) => {
       const countryMatch =
-        selectedCountries.length === 0 ||
-        selectedCountries.includes(project.countryCode.toLowerCase())
+        appliedCountries.length === 0 ||
+        appliedCountries.includes(project.countryCode.toLowerCase())
 
       const techMatch =
-        selectedTech.length === 0 ||
-        selectedTech.every((tech) =>
+        appliedTech.length === 0 ||
+        appliedTech.every((tech) =>
           project.techStack.map((t) => t.toLowerCase()).includes(tech.toLowerCase())
         )
 
       return countryMatch && techMatch
     })
-  }, [selectedCountries, selectedTech, sortedProjects])
+  }, [appliedCountries, appliedTech, sortedProjects])
 
   return (
     <>
@@ -254,6 +256,8 @@ const Freelancing = () => {
                     onClick={() => {
                       setSelectedCountries([])
                       setSelectedTech([])
+                      setAppliedCountries([])
+                      setAppliedTech([])
                     }}
                     className="text-sm font-medium text-[#007bff] hover:text-[#0056b3] transition-colors"
                   >
@@ -263,23 +267,49 @@ const Freelancing = () => {
               </div>
             </div>
 
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              <MultiSelectFilter
-                label="Country"
-                options={countryOptions}
-                selected={selectedCountries}
-                onChange={setSelectedCountries}
-                placeholder="Pick one or more countries"
-                mode="dropdown"
-              />
-              <MultiSelectFilter
-                label="Tech Stack"
-                options={techOptions}
-                selected={selectedTech}
-                onChange={setSelectedTech}
-                placeholder="Pick one or more tools"
-                mode="dropdown"
-              />
+            <div className="mt-5 flex flex-col md:flex-row gap-4 items-stretch">
+              <div className="flex-1 w-full">
+                <MultiSelectFilter
+                  label="Country"
+                  options={countryOptions}
+                  selected={selectedCountries}
+                  onChange={setSelectedCountries}
+                  placeholder="Pick one or more countries"
+                  mode="dropdown"
+                />
+              </div>
+              <div className="flex-1 w-full">
+                <MultiSelectFilter
+                  label="Tech Stack"
+                  options={techOptions}
+                  selected={selectedTech}
+                  onChange={setSelectedTech}
+                  placeholder="Pick one or more tools"
+                  mode="dropdown"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setAppliedCountries(selectedCountries)
+                  setAppliedTech(selectedTech)
+                }}
+                className="px-8 bg-[#007bff] text-white font-semibold rounded-xl hover:bg-[#0056b3] transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed hidden md:block"
+                disabled={selectedCountries.length === 0 && selectedTech.length === 0 && appliedCountries.length === 0 && appliedTech.length === 0}
+              >
+                Apply
+              </button>
+              {/* Mobile Apply Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setAppliedCountries(selectedCountries)
+                  setAppliedTech(selectedTech)
+                }}
+                className="w-full py-4 bg-[#007bff] text-white font-semibold rounded-xl hover:bg-[#0056b3] transition-colors shadow-sm md:hidden"
+              >
+                Apply Filters
+              </button>
             </div>
           </div>
 

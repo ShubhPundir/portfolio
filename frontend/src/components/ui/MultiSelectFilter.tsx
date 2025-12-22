@@ -28,7 +28,6 @@ const MultiSelectFilter = ({
 }: MultiSelectFilterProps) => {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [tempSelected, setTempSelected] = useState<string[]>(selected)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Ensure component only renders after client-side hydration
@@ -36,17 +35,11 @@ const MultiSelectFilter = ({
     setMounted(true)
   }, [])
 
-  // Sync tempSelected with selected when dropdown closes or selected changes
-  useEffect(() => {
-    setTempSelected(selected)
-  }, [selected])
-
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false)
-        setTempSelected(selected) // Reset temp selection
       }
     }
 
@@ -57,33 +50,18 @@ const MultiSelectFilter = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isOpen, selected])
+  }, [isOpen])
 
   const toggleValue = (value: string) => {
-    if (mode === 'inline') {
-      onChange(
-        selected.includes(value)
-          ? selected.filter((item) => item !== value)
-          : [...selected, value]
-      )
-    } else {
-      // For dropdown mode, update temp selection
-      setTempSelected(
-        tempSelected.includes(value)
-          ? tempSelected.filter((item) => item !== value)
-          : [...tempSelected, value]
-      )
-    }
-  }
-
-  const applySelection = () => {
-    onChange(tempSelected)
-    setIsOpen(false)
+    onChange(
+      selected.includes(value)
+        ? selected.filter((item) => item !== value)
+        : [...selected, value]
+    )
   }
 
   const clear = () => {
     onChange([])
-    setTempSelected([])
   }
 
   // Prevent hydration mismatch by not rendering until mounted
@@ -159,7 +137,7 @@ const MultiSelectFilter = ({
           <div className="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
             <div className="p-2">
               {options.map((option) => {
-                const isChecked = tempSelected.includes(option.value)
+                const isChecked = selected.includes(option.value)
                 return (
                   <label
                     key={option.value}
@@ -175,14 +153,6 @@ const MultiSelectFilter = ({
                   </label>
                 )
               })}
-            </div>
-            <div className="border-t border-gray-200 p-3 bg-gray-50 rounded-b-xl">
-              <button
-                onClick={applySelection}
-                className="w-full px-4 py-2 bg-[#007bff] text-white text-sm font-medium rounded-lg hover:bg-[#0056b3] transition-colors shadow-sm"
-              >
-                Apply ({tempSelected.length})
-              </button>
             </div>
           </div>
         )}
@@ -221,8 +191,8 @@ const MultiSelectFilter = ({
               type="button"
               onClick={() => toggleValue(option.value)}
               className={`rounded-full border px-3 py-1 text-xs font-medium transition-all ${isActive
-                  ? 'border-[#007bff] bg-[#007bff]/10 text-[#007bff] shadow-sm'
-                  : 'border-gray-200 bg-gray-50 text-[#555] hover:border-[#007bff]/40 hover:bg-[#007bff]/5'
+                ? 'border-[#007bff] bg-[#007bff]/10 text-[#007bff] shadow-sm'
+                : 'border-gray-200 bg-gray-50 text-[#555] hover:border-[#007bff]/40 hover:bg-[#007bff]/5'
                 }`}
             >
               {option.label}
