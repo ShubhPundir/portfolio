@@ -1,7 +1,7 @@
 'use client'
 
 import Navbar from '@/components/Navbar'
-import FreelanceTimeline, { type FreelanceProject } from '@/components/ui/FreelanceTimeline'
+import Timeline, { type FreelanceProject } from '@/components/ui/Timeline'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import MultiSelectFilter from '@/components/ui/MultiSelectFilter'
@@ -314,7 +314,7 @@ const Freelancing = () => {
           </div>
 
           {/* Timeline */}
-          <FreelanceTimeline projects={filteredProjects} />
+          <Timeline items={filteredProjects} />
 
           {/* Summary Footer */}
           <div className="mt-12 text-center">
