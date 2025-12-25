@@ -1,4 +1,4 @@
-import AllProjects from '@/components/AllProjects'
+import AllProjects from '@/components/projects/AllProjects'
 import Navbar from '@/components/Navbar'
 
 export default function AllProjectsPage() {

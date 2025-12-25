@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import ProjectCard from './projects/ProjectCard'
-import TagFilter from './projects/TagFilter'
-import { projects } from './projects/projectsData'
-import { TagType } from './projects/types'
+import ProjectCard from './ProjectCard'
+import TagFilter from './TagFilter'
+import { projects } from './projectsData'
+import { TagType } from './types'
 
 const AllProjects = () => {
   const [selectedTags, setSelectedTags] = useState<TagType[]>([])
@@ -19,8 +19,10 @@ const AllProjects = () => {
   // Filter projects based on selected tags
   const filteredProjects =
     selectedTags.length === 0
-      ? projects
-      : projects.filter((project) => project.tags.some((tag) => selectedTags.includes(tag)))
+      ? [...projects].sort((a, b) => (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0))
+      : projects
+        .filter((project) => project.tags.some((tag) => selectedTags.includes(tag)))
+        .sort((a, b) => (b.favorite ? 1 : 0) - (a.favorite ? 1 : 0))
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f8f9fa] via-white to-[#f0f4f8] py-12 px-5 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
@@ -56,7 +58,7 @@ const AllProjects = () => {
               <div
                 key={index}
                 className="opacity-0 animate-fade-in-up"
-                style={{ 
+                style={{
                   animationDelay: `${index * 50}ms`,
                   animationFillMode: 'forwards'
                 }}

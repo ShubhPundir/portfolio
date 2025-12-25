@@ -29,6 +29,7 @@ export interface Project {
   description: string | ReactNode
   tags: TagType[]
   repoLink: string
+  favorite?: boolean
 }
 
 export interface Experience {

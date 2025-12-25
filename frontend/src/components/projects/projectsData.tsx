@@ -11,6 +11,7 @@ export const projects: Project[] = [
     ),
     tags: [TAGS.ML_DL, TAGS.ANALYTICS, TAGS.WEB_SCRAPING, TAGS.NLP],
     repoLink: "https://github.com/ShubhPundir/Music-Recommendation-Engine",
+    favorite: true,
   },
   {
     name: "CNN Music Genre Classifier",
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     ),
     tags: [TAGS.ANALYTICS, TAGS.ML_DL, TAGS.NLP, TAGS.CV, TAGS.FULL_STACK],
     repoLink: "https://github.com/TeslaC00/Food-Stat",
+    favorite: true,
   },
   {
     name: "FIND-DB",
@@ -51,6 +53,7 @@ export const projects: Project[] = [
     ),
     tags: [TAGS.FULL_STACK, TAGS.NLP, TAGS.ML_DL, TAGS.CV],
     repoLink: "https://github.com/Cipher3003/Mudda",
+    favorite: true,
   },
   {
     name: "MediRecord",
