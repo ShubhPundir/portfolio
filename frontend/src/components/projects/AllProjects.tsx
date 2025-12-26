@@ -53,10 +53,11 @@ const AllProjects = () => {
           <div className="flex bg-white rounded-lg p-1 shadow-sm border border-gray-200 self-center md:self-end">
             <button
               onClick={() => setView('grid')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${view === 'grid'
+              className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-all ${view === 'grid'
                 ? 'bg-[#007bff] text-white shadow-sm'
                 : 'text-[#666] hover:bg-gray-50'
                 }`}
+              title="Grid View"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="7" height="7"></rect>
@@ -64,14 +65,15 @@ const AllProjects = () => {
                 <rect x="14" y="14" width="7" height="7"></rect>
                 <rect x="3" y="14" width="7" height="7"></rect>
               </svg>
-              Grid
+              <span className="hidden md:inline">Grid</span>
             </button>
             <button
               onClick={() => setView('table')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${view === 'table'
+              className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-all ${view === 'table'
                 ? 'bg-[#007bff] text-white shadow-sm'
                 : 'text-[#666] hover:bg-gray-50'
                 }`}
+              title="Table View"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
@@ -81,7 +83,7 @@ const AllProjects = () => {
                 <line x1="3" y1="12" x2="3.01" y2="12"></line>
                 <line x1="3" y1="18" x2="3.01" y2="18"></line>
               </svg>
-              Table
+              <span className="hidden md:inline">Table</span>
             </button>
           </div>
         </div>
@@ -113,7 +115,7 @@ const AllProjects = () => {
             /* Table View */
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden animate-fade-in-up">
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full text-left border-collapse min-w-[600px] md:min-w-full">
                   <thead>
                     <tr className="bg-gray-50 border-b border-gray-200">
                       <th className="py-4 px-6 text-sm font-semibold text-[#333] w-[30%]">Project Name</th>

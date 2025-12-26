@@ -101,28 +101,38 @@ const TimelineItem = (props: TimelineItemProps) => {
   const isFreelance = !!clientName
 
   return (
-    <div className="relative flex gap-6 pb-8">
-      {/* Timeline Line */}
+    <div className="relative flex flex-col md:flex-row gap-6 pb-8">
+      {/* Timeline Line - Desktop Only */}
       {!isLast && (
-        <div className="absolute left-[140px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#007bff] to-gray-300"></div>
+        <div className="hidden md:block absolute left-[140px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#007bff] to-gray-300"></div>
       )}
 
-      {/* Date on Left */}
-      <div className="w-32 flex-shrink-0 pt-1">
+      {/* Timeline Line - Mobile Only */}
+      {!isLast && (
+        <div className="md:hidden absolute left-[23px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#007bff] to-gray-300"></div>
+      )}
+
+      {/* Date - Desktop */}
+      <div className="hidden md:block w-32 flex-shrink-0 pt-1">
         <div className="text-right">
           <div className="text-sm font-semibold text-[#007bff]">{duration || date}</div>
         </div>
       </div>
 
-      {/* Timeline Dot */}
-      <div className="relative z-10 flex-shrink-0">
+      {/* Timeline Dot & Mobile Header */}
+      <div className="flex items-center gap-4 md:block relative z-10 flex-shrink-0">
         <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-[#007bff] to-[#0056b3] flex items-center justify-center text-white font-bold shadow-lg border-4 border-white ${isFreelance ? 'text-2xl' : 'text-lg'}`}>
           {flag ? flag : (icon ? <span>{icon}</span> : <span className="text-sm">●</span>)}
+        </div>
+
+        {/* Date - Mobile */}
+        <div className="md:hidden">
+          <div className="text-sm font-semibold text-[#007bff]">{duration || date}</div>
         </div>
       </div>
 
       {/* Content Card */}
-      <div className="flex-1 pt-1">
+      <div className="flex-1 pt-1 md:pt-1 pl-4 md:pl-0 border-l-2 border-transparent md:border-none">
         <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-[#007bff]/30 p-6 hover:-translate-y-1">
           {/* Header */}
           <div className="mb-4">
