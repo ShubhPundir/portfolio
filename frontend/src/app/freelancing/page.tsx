@@ -6,168 +6,168 @@ import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import MultiSelectFilter from '@/components/ui/MultiSelectFilter'
 
+const projects: FreelanceProject[] = [
+  {
+    id: 1,
+    title: "Analysis Dashboard for Test Logs",
+    clientName: "Akande M. Eliott",
+    clientPrefix: "Akan",
+    blurClientName: false,
+    location: "Morocco",
+    date: "December 2022",
+    techStack: ["Kibana", "R", "Excel"],
+    description: "Built a Kibana-based analytics dashboard to visualize large volumes of system test logs, enabling quicker debugging and test evaluation for internal QA teams.",
+    impact: "Enabled real-time log analytics and reduced test-cycle troubleshooting by ~40%.",
+    flag: "🇲🇦",
+    countryCode: "ma"
+  },
+  {
+    id: 2,
+    title: "Periodic Web Scraper for Facebook Marketplace & Zillow",
+    clientName: "Addi",
+    clientPrefix: "Addi",
+    blurClientName: true,
+    location: "Ethiopia",
+    date: "December 2022",
+    techStack: ["Python", "BeautifulSoup", "ProxyMesh", "2Captcha"],
+    description: "Created a web scraper that periodically extracts property listings and price trends from Facebook Marketplace and Zillow for market research.",
+    impact: "Enabled daily scraping and data dumps, helping track property price trends over time.",
+    flag: "🇪🇹",
+    countryCode: "et"
+  },
+  {
+    id: 3,
+    title: "ETL Report Generation + Power BI Dashboards",
+    clientName: "Amber P.",
+    clientPrefix: "Ambe",
+    blurClientName: false,
+    location: "UK",
+    date: "February 2023",
+    techStack: ["Power BI", "Python (Pandas)", "Excel", "SQL"],
+    description: "Generated ETL pipelines for health monitoring data and visualized the results through interactive Power BI dashboards for a UK-based health analyst.",
+    impact: "Improved monthly reporting efficiency and health trend tracking accuracy.",
+    flag: "🇬🇧",
+    countryCode: "gb"
+  },
+  {
+    id: 4,
+    title: "Power BI Dashboards + Logstash Pipelines",
+    clientName: "Francis O.",
+    clientPrefix: "Fran",
+    blurClientName: false,
+    location: "UAE",
+    date: "February 2023",
+    techStack: ["Power BI", "Logstash", "Pandas", "Cassandra"],
+    description: "Developed dashboards for visualizing ticket transaction logs and built Logstash pipelines to preprocess and clean large transactional data streams.",
+    impact: "Streamlined data pipeline setup and enabled business intelligence turnaround faster.",
+    flag: "🇦🇪",
+    countryCode: "ae"
+  },
+  {
+    id: 5,
+    title: "Compiled Reports for Sales Performance",
+    clientName: "Ishaan",
+    clientPrefix: "Ishaan",
+    blurClientName: true,
+    location: "India",
+    date: "May 2023",
+    techStack: ["Excel", "Python", "Pandas"],
+    description: "Analyzed historical sales data to generate detailed performance reports segmented by region and category.",
+    impact: "Delivered easy-to-read summaries to help improve regional sales decision-making.",
+    flag: "🇮🇳",
+    countryCode: "in"
+  },
+  {
+    id: 6,
+    title: "News & Blog Scraping with Financial Correlation",
+    clientName: "Kaml",
+    clientPrefix: "Kaml",
+    blurClientName: true,
+    location: "UK",
+    date: "June 2023",
+    techStack: ["Python", "BeautifulSoup", "yFinance", "Pandas"],
+    description: "Scraped finance-related news/blogs from Yahoo Finance and cross-referenced them with corresponding stock data to highlight correlation patterns.",
+    impact: "Provided insights into possible media influence on market behavior.",
+    flag: "🇬🇧",
+    countryCode: "gb"
+  },
+  {
+    id: 7,
+    title: "CRM Data Wrangling & Research",
+    clientName: "Mason Richards",
+    clientPrefix: "Maso",
+    blurClientName: false,
+    location: "UK",
+    date: "August 2023",
+    techStack: ["Excel", "Python", "Pandas", "openpyxl", "PowerBI"],
+    description: "Cleaned and structured messy CRM export data, conducted trend analysis, and built summary metrics for reporting. Refactored legacy BI system with a leaner and simpler PowerBI dashboard for performance charts.",
+    impact: "Improved data quality and streamlined reporting processes.",
+    flag: "🇬🇧",
+    countryCode: "gb"
+  },
+  {
+    id: 8,
+    title: "Customer Review Sentiment Analysis Pipeline",
+    clientName: "Aisha Benali",
+    clientPrefix: "Aish",
+    blurClientName: false,
+    location: "Morocco",
+    date: "March 2024",
+    techStack: ["Python", "Transformers", "BERT", "FastAPI", "React"],
+    description: "Built an automated sentiment analysis system to categorize customer reviews from multiple e-commerce sources (Shopify, Etsy) into positive, negative, and neutral sentiments. Integrated the results into Power BI dashboards for daily trend visualization.",
+    impact: "Helped client identify negative review spikes 3× faster, enabling proactive issue resolution and boosting customer satisfaction metrics.",
+    flag: "🇲🇦",
+    countryCode: "ma"
+  },
+  {
+    id: 9,
+    title: "Chatbot using RASA",
+    clientName: "Colin E. Duffy",
+    clientPrefix: "Coli",
+    blurClientName: false,
+    location: "Denmark",
+    date: "September 2024",
+    techStack: ["RASA", "Cassandra", "BotPress", "NLU"],
+    description: "Implemented NLU principles in creating intents, actions and stories for user requests and responses. Migrating BotPress story graphs into simpler cleaner Rasa code streamlining user experience and reducing cost by 45%.",
+    impact: "Improved client's ticket query with order delays and reduced call complaint logs by 12%.",
+    flag: "🇩🇰",
+    countryCode: "dk"
+  },
+  {
+    id: 10,
+    title: "Chatbot integration with Existing CRM System",
+    clientName: "Martin L. Sørensen",
+    clientPrefix: "Mart",
+    blurClientName: false,
+    location: "Denmark",
+    date: "December 2024",
+    techStack: ["Python", "RASA", "PostgreSQL"],
+    description: "Integrated an existing customer service chatbot with the client's CRM backend to enable dynamic retrieval and update of customer tickets, orders, and interaction histories. Implemented secure API endpoints and a context manager to maintain conversation continuity across sessions.",
+    impact: "Automated ~60% of repetitive CRM queries, improving response time for customer support by 35% and reducing manual data lookup tasks.",
+    flag: "🇩🇰",
+    countryCode: "dk"
+  },
+  {
+    id: 11,
+    title: "RAG over document using Gemini",
+    clientName: "Alice Ann",
+    clientPrefix: "Alic",
+    blurClientName: false,
+    location: "Denmark",
+    date: "February 2025",
+    techStack: ["Langchain", "FastAPI", "QdrantDB", "ReactJS", "MongoDB"],
+    description: "Made an end-to-end optimized chatbot for document referencing and search analytics for internal managerial tools.",
+    impact: "Enabled efficient document search and retrieval for internal operations.",
+    flag: "🇩🇰",
+    countryCode: "dk"
+  }
+]
+
 const Freelancing = () => {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([])
   const [selectedTech, setSelectedTech] = useState<string[]>([])
   const [appliedCountries, setAppliedCountries] = useState<string[]>([])
   const [appliedTech, setAppliedTech] = useState<string[]>([])
-
-  const projects: FreelanceProject[] = [
-    {
-      id: 1,
-      title: "Analysis Dashboard for Test Logs",
-      clientName: "Akande M. Eliott",
-      clientPrefix: "Akan",
-      blurClientName: false,
-      location: "Morocco",
-      date: "December 2022",
-      techStack: ["Kibana", "R", "Excel"],
-      description: "Built a Kibana-based analytics dashboard to visualize large volumes of system test logs, enabling quicker debugging and test evaluation for internal QA teams.",
-      impact: "Enabled real-time log analytics and reduced test-cycle troubleshooting by ~40%.",
-      flag: "🇲🇦",
-      countryCode: "ma"
-    },
-    {
-      id: 2,
-      title: "Periodic Web Scraper for Facebook Marketplace & Zillow",
-      clientName: "Addi",
-      clientPrefix: "Addi",
-      blurClientName: true,
-      location: "Ethiopia",
-      date: "December 2022",
-      techStack: ["Python", "BeautifulSoup", "ProxyMesh", "2Captcha"],
-      description: "Created a web scraper that periodically extracts property listings and price trends from Facebook Marketplace and Zillow for market research.",
-      impact: "Enabled daily scraping and data dumps, helping track property price trends over time.",
-      flag: "🇪🇹",
-      countryCode: "et"
-    },
-    {
-      id: 3,
-      title: "ETL Report Generation + Power BI Dashboards",
-      clientName: "Amber P.",
-      clientPrefix: "Ambe",
-      blurClientName: false,
-      location: "UK",
-      date: "February 2023",
-      techStack: ["Power BI", "Python", "Pandas", "Excel", "SQL"],
-      description: "Generated ETL pipelines for health monitoring data and visualized the results through interactive Power BI dashboards for a UK-based health analyst.",
-      impact: "Improved monthly reporting efficiency and health trend tracking accuracy.",
-      flag: "🇬🇧",
-      countryCode: "gb"
-    },
-    {
-      id: 4,
-      title: "Power BI Dashboards + Logstash Pipelines",
-      clientName: "Francis O.",
-      clientPrefix: "Fran",
-      blurClientName: false,
-      location: "UAE",
-      date: "February 2023",
-      techStack: ["Power BI", "Logstash", "Pandas", "Cassandra"],
-      description: "Developed dashboards for visualizing ticket transaction logs and built Logstash pipelines to preprocess and clean large transactional data streams.",
-      impact: "Streamlined data pipeline setup and enabled business intelligence turnaround faster.",
-      flag: "🇦🇪",
-      countryCode: "ae"
-    },
-    {
-      id: 5,
-      title: "Compiled Reports for Sales Performance",
-      clientName: "Ishaan",
-      clientPrefix: "Ishaan",
-      blurClientName: true,
-      location: "India",
-      date: "May 2023",
-      techStack: ["Excel", "Python", "Pandas"],
-      description: "Analyzed historical sales data to generate detailed performance reports segmented by region and category.",
-      impact: "Delivered easy-to-read summaries to help improve regional sales decision-making.",
-      flag: "🇮🇳",
-      countryCode: "in"
-    },
-    {
-      id: 6,
-      title: "News & Blog Scraping with Financial Correlation",
-      clientName: "Kaml",
-      clientPrefix: "Kaml",
-      blurClientName: true,
-      location: "UK",
-      date: "June 2023",
-      techStack: ["Python", "BeautifulSoup", "yFinance", "Pandas"],
-      description: "Scraped finance-related news/blogs from Yahoo Finance and cross-referenced them with corresponding stock data to highlight correlation patterns.",
-      impact: "Provided insights into possible media influence on market behavior.",
-      flag: "🇬🇧",
-      countryCode: "gb"
-    },
-    {
-      id: 7,
-      title: "CRM Data Wrangling & Research",
-      clientName: "Mason Richards",
-      clientPrefix: "Maso",
-      blurClientName: false,
-      location: "UK",
-      date: "August 2023",
-      techStack: ["Excel", "Python", "Pandas", "openpyxl", "Power BI"],
-      description: "Cleaned and structured messy CRM export data, conducted trend analysis, and built summary metrics for reporting. Refactored legacy BI system with a leaner and simpler Power BI dashboard for performance charts.",
-      impact: "Improved data quality and streamlined reporting processes.",
-      flag: "🇬🇧",
-      countryCode: "gb"
-    },
-    {
-      id: 8,
-      title: "Customer Review Sentiment Analysis Pipeline",
-      clientName: "Aisha Benali",
-      clientPrefix: "Aish",
-      blurClientName: false,
-      location: "Morocco",
-      date: "March 2024",
-      techStack: ["Python", "Transformers", "BERT", "FastAPI", "React"],
-      description: "Built an automated sentiment analysis system to categorize customer reviews from multiple e-commerce sources (Shopify, Etsy) into positive, negative, and neutral sentiments. Integrated the results into Power BI dashboards for daily trend visualization.",
-      impact: "Helped client identify negative review spikes 3× faster, enabling proactive issue resolution and boosting customer satisfaction metrics.",
-      flag: "🇲🇦",
-      countryCode: "ma"
-    },
-    {
-      id: 9,
-      title: "Chatbot using RASA",
-      clientName: "Colin E. Duffy",
-      clientPrefix: "Coli",
-      blurClientName: false,
-      location: "Denmark",
-      date: "September 2024",
-      techStack: ["RASA", "Cassandra", "BotPress", "NLU"],
-      description: "Implemented NLU principles in creating intents, actions and stories for user requests and responses. Migrating BotPress story graphs into simpler cleaner Rasa code streamlining user experience and reducing cost by 45%.",
-      impact: "Improved client's ticket query with order delays and reduced call complaint logs by 12%.",
-      flag: "🇩🇰",
-      countryCode: "dk"
-    },
-    {
-      id: 10,
-      title: "Chatbot integration with Existing CRM System",
-      clientName: "Martin L. Sørensen",
-      clientPrefix: "Mart",
-      blurClientName: false,
-      location: "Denmark",
-      date: "December 2024",
-      techStack: ["Python", "RASA", "PostgreSQL"],
-      description: "Integrated an existing customer service chatbot with the client's CRM backend to enable dynamic retrieval and update of customer tickets, orders, and interaction histories. Implemented secure API endpoints and a context manager to maintain conversation continuity across sessions.",
-      impact: "Automated ~60% of repetitive CRM queries, improving response time for customer support by 35% and reducing manual data lookup tasks.",
-      flag: "🇩🇰",
-      countryCode: "dk"
-    },
-    {
-      id: 11,
-      title: "RAG over document using Gemini",
-      clientName: "Alice Ann",
-      clientPrefix: "Alic",
-      blurClientName: false,
-      location: "Denmark",
-      date: "February 2025",
-      techStack: ["Langchain", "FastAPI", "QdrantDB", "ReactJS", "MongoDB"],
-      description: "Made an end-to-end optimized chatbot for document referencing and search analytics for internal managerial tools.",
-      impact: "Enabled efficient document search and retrieval for internal operations.",
-      flag: "🇩🇰",
-      countryCode: "dk"
-    }
-  ]
 
   // Sort projects in descending chronological order (newest first)
   const sortedProjects = useMemo(() => {
@@ -182,7 +182,7 @@ const Freelancing = () => {
       return year * 12 + month
     }
     return [...projects].sort((a, b) => parseDate(b.date) - parseDate(a.date))
-  }, [projects])
+  }, [])
 
   const countryOptions = useMemo(() => {
     const map = new Map<string, { label: string; value: string }>()
@@ -193,7 +193,7 @@ const Freelancing = () => {
       }
     })
     return Array.from(map.values()).sort((a, b) => a.label.localeCompare(b.label))
-  }, [projects])
+  }, [])
 
   const techOptions = useMemo(() => {
     const set = new Set<string>()
@@ -201,7 +201,7 @@ const Freelancing = () => {
     return Array.from(set)
       .sort((a, b) => a.localeCompare(b))
       .map((tech) => ({ label: tech, value: tech }))
-  }, [projects])
+  }, [])
 
   const filteredProjects = useMemo(() => {
     return sortedProjects.filter((project) => {
