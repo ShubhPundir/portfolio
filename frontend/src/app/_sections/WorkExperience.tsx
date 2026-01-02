@@ -6,7 +6,7 @@ const WorkExperience = () => {
     {
       title: "Software Engineer",
       company: "MYTL Technologies",
-      duration: "Aug 2025 - Present",
+      duration: "Aug 2025 - Dec 2025",
       icon: "🚀",
       link: "http://bodhianalytics.in/",
       description: (
@@ -54,7 +54,7 @@ const WorkExperience = () => {
       company: "Self Employed",
       duration: "Jan 2022 - Present",
       icon: "💼",
-      link: "https://shubhpundir.github.io/portfolio/freelancing",
+      link: "https://speedwagon-rho.vercel.app/",
       description: (
         <ul className="list-none space-y-2 text-sm">
           <li className="flex items-start gap-2">
@@ -127,7 +127,7 @@ const WorkExperience = () => {
           <h2 className="text-4xl font-bold text-[#333] mb-3">Work Experience</h2>
           <p className="text-[#666] text-lg">Professional journey and key achievements</p>
         </div>
-        
+
         <div className="relative">
           <Timeline items={experiences} />
         </div>
