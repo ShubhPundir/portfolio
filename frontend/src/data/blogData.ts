@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
         excerpt: 'Exploring how AI can automate and optimize administrative workflows through intelligent orchestration and generation.',
         date: 'January 2026',
         platform: 'Mudda Dashboard',
-        thumbnail: '/blogs/ai-workflow.png',
+        thumbnail: '/portfolio/blogs/ai-workflow.jpg',
         link: 'https://mudda-dashboard.vercel.app/blog/ai-workflow-generation-for-administrative-orchestration',
         tags: ['AI', 'Workflow', 'Automation', 'Administration']
     },
@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
         excerpt: 'A deep dive into common pitfalls and production challenges when deploying RAG (Retrieval Augmented Generation) microservices.',
         date: 'December 2025',
         platform: 'Medium',
-        thumbnail: '/blogs/rag-microservice.png',
+        thumbnail: '/portfolio/blogs/rag-microservice.jpg',
         link: 'https://medium.com/@shb.pndr/why-your-rag-microservice-fails-in-production-cb4c76719a30',
         tags: ['RAG', 'Microservices', 'Production', 'AI', 'LLM']
     }
