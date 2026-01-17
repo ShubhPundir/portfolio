@@ -39,5 +39,15 @@ export const blogPosts: BlogPost[] = [
         thumbnail: '/portfolio/',
         link: 'https://medium.com/@shb.pndr/pii-protection-laws-your-product-must-obey-whether-you-like-it-or-not-a34ac0af8c3d',
         tags: ['PII', 'Cybersecurity', 'LLM']
+    },
+    {
+        id: 4,
+        title: "How URL Shorteners Work - Part 1",
+        excerpt: "An in-depth look at the mechanics behind URL shorteners, exploring how they function and their impact on web navigation.",
+        date: "March 2023",
+        platform: "Medium",
+        thumbnail: "/portfolio/blogs/url-shorteners.jpg",
+        link: "https://medium.com/@shb.pndr/how-url-shorteners-work-part-1-50413f91229b",
+        tags: ["URL Shorteners", "Web Development", "Networking"]
     }
 ]
