@@ -29,5 +29,15 @@ export const blogPosts: BlogPost[] = [
         thumbnail: '/portfolio/blogs/rag-microservice.jpg',
         link: 'https://medium.com/@shb.pndr/why-your-rag-microservice-fails-in-production-cb4c76719a30',
         tags: ['RAG', 'Microservices', 'Production', 'AI', 'LLM']
+    },
+    {
+        id: 3,
+        title: 'PII Protection Laws Your Product Must Obey (Whether You Like It or Not)',
+        excerpt: 'Understanding PII protection laws and regulations that every product must comply with in the modern digital landscape.',
+        date: 'January 2026',
+        platform: 'Medium',
+        thumbnail: '/portfolio/',
+        link: 'https://medium.com/@shb.pndr/pii-protection-laws-your-product-must-obey-whether-you-like-it-or-not-a34ac0af8c3d',
+        tags: ['PII', 'Cybersecurity', 'LLM']
     }
 ]
