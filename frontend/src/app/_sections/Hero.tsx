@@ -94,6 +94,18 @@ const Hero = () => {
             </a>
 
             <a
+              href="https://calendly.com/shb-pndr"
+              className="group inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-[#f0a500] rounded-lg transition-all hover:bg-[#ffbb33] hover:scale-105 shadow-lg hover:shadow-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 4h-2V3a1 1 0 00-2 0v1H9V3a1 1 0 00-2 0v1H5a3 3 0 00-3 3v12a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 15a1 1 0 01-1 1H5a1 1 0 01-1-1v-7h16v7zm0-9H4V7a1 1 0 011-1h2v1a1 1 0 002 0V6h6v1a1 1 0 002 0V6h2a1 1 0 011 1v2z" />
+              </svg>
+              Calendly
+            </a>
+
+            <a
               href="/portfolio/Shubh_Resume.pdf"
               download
               className="group inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-white bg-[#007bff] rounded-lg transition-all hover:bg-[#0056b3] hover:scale-105 shadow-lg hover:shadow-xl"
