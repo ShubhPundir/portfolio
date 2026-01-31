@@ -1,3 +1,5 @@
+import { link } from "fs"
+
 export interface BlogPost {
     id: number
     title: string
@@ -16,8 +18,8 @@ export const blogPosts: BlogPost[] = [
         excerpt: 'Exploring how AI can automate and optimize administrative workflows through intelligent orchestration and generation.',
         date: 'January 2026',
         platform: 'Mudda Dashboard',
-        thumbnail: '/portfolio/blogs/ai-workflow.jpg',
-        link: 'https://mudda-dashboard.vercel.app/blog/ai-workflow-generation-for-administrative-orchestration',
+        thumbnail: '/portfolio/blogs/Mudda-AI-Workflow-v1.png',
+        link: 'https://medium.com/@shb.pndr/building-agentic-workflows-for-administration-that-actually-run-v1-13473b4331a0',
         tags: ['AI', 'Workflow', 'Automation', 'Administration']
     },
     {
@@ -26,12 +28,22 @@ export const blogPosts: BlogPost[] = [
         excerpt: 'A deep dive into common pitfalls and production challenges when deploying RAG (Retrieval Augmented Generation) microservices.',
         date: 'December 2025',
         platform: 'Medium',
-        thumbnail: '/portfolio/blogs/rag-microservice.jpg',
+        thumbnail: '/portfolio/blogs/RAG.png',
         link: 'https://medium.com/@shb.pndr/why-your-rag-microservice-fails-in-production-cb4c76719a30',
         tags: ['RAG', 'Microservices', 'Production', 'AI', 'LLM']
     },
     {
         id: 3,
+        title: 'Why Your RAG Microservice Still Returns Hallucinations',
+        excerpt: 'A deep dive into common pitfalls and production challenges when deploying RAG (Retrieval Augmented Generation) microservices.',
+        date: 'December 2025',
+        platform: 'Medium',
+        thumbnail: '/portfolio/blogs/rag-microservice.jpg',
+        link: 'https://medium.com/@shb.pndr/why-your-rag-microservice-still-returns-hallucinations-2a85138eada6',
+        tags: ['RAG', 'Microservices', 'Production', 'AI', 'LLM']
+    },
+    {
+        id: 4,
         title: 'PII Protection Laws Your Product Must Obey (Whether You Like It or Not)',
         excerpt: 'Understanding PII protection laws and regulations that every product must comply with in the modern digital landscape.',
         date: 'January 2026',
@@ -41,7 +53,7 @@ export const blogPosts: BlogPost[] = [
         tags: ['PII', 'Cybersecurity', 'LLM']
     },
     {
-        id: 4,
+        id: 5,
         title: "How URL Shorteners Work - Part 1",
         excerpt: "An in-depth look at the mechanics behind URL shorteners, exploring how they function and their impact on web navigation.",
         date: "March 2023",
