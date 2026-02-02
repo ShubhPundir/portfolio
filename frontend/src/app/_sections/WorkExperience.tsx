@@ -4,6 +4,29 @@ import { Experience } from '@/components/projects/types'
 const WorkExperience = () => {
   const experiences: Experience[] = [
     {
+      title: "Freelancer",
+      company: "Self Employed",
+      duration: "Jan 2022 - Present",
+      icon: "💼",
+      link: "https://shubhpundir.github.io/portfolio/freelancing",
+      description: (
+        <ul className="list-none space-y-2 text-sm">
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[#007bff] mt-1">▸</span>
+            <span>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</span>
+          </li>
+        </ul>
+      )
+    },
+    {
       title: "Founding Software Engineer Member",
       company: "MYTL Technologies",
       duration: "Aug 2025 - Dec 2025",
@@ -45,29 +68,6 @@ const WorkExperience = () => {
           <li className="flex items-start gap-2">
             <span className="text-[#007bff] mt-1">▸</span>
             <span>Developed a <strong>Django-based asset management framework</strong>, integrating <strong>Win32 API</strong> for device registration and software patch management.</span>
-          </li>
-        </ul>
-      )
-    },
-    {
-      title: "Freelancer",
-      company: "Self Employed",
-      duration: "Jan 2022 - Present",
-      icon: "💼",
-      link: "https://speedwagon-rho.vercel.app/",
-      description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</span>
           </li>
         </ul>
       )
