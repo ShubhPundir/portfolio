@@ -1,5 +1,6 @@
 import Timeline from '../../components/ui/Timeline'
 import { Experience } from '@/components/projects/types'
+import ExperiencePoints from '@/components/ui/ExperiencePoints'
 
 const WorkExperience = () => {
   const experiences: Experience[] = [
@@ -10,20 +11,13 @@ const WorkExperience = () => {
       icon: "💼",
       link: "https://shubhpundir.github.io/portfolio/freelancing",
       description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</span>
-          </li>
-        </ul>
+        <ExperiencePoints
+          points={[
+            <>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</>,
+            <>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</>,
+            <>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</>
+          ]}
+        />
       )
     },
     {
@@ -33,20 +27,13 @@ const WorkExperience = () => {
       icon: "🚀",
       link: "http://bodhianalytics.in/",
       description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Worked on the product of BodhiAnalytics and DIAL.ai for improving the call reliability and performance by refactoring the <strong>SIP communication stack</strong> into a production-grade microservice ecosystem using Drachtio and FreeSWITCH, improving call reliability for users.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Enhanced internal <strong>Analytics Engine</strong> by fine-tuning a <strong>BERT-based Intent Classifier</strong>, reducing redundant RAG calls by <strong>40%</strong> and improving intent detection accuracy for inbound knowledge base screening.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Optimized real-time call performance by reducing <strong>SIP latency by 30%</strong> through debugging and streamlining Redis Streams and WebSocket event handling for OpenAI&apos;s Realtime API integration.</span>
-          </li>
-        </ul>
+        <ExperiencePoints
+          points={[
+            <>Worked on the product of BodhiAnalytics and DIAL.ai for improving the call reliability and performance by refactoring the <strong>SIP communication stack</strong> into a production-grade microservice ecosystem using Drachtio and FreeSWITCH, improving call reliability for users.</>,
+            <>Enhanced internal <strong>Analytics Engine</strong> by fine-tuning a <strong>BERT-based Intent Classifier</strong>, reducing redundant RAG calls by <strong>40%</strong> and improving intent detection accuracy for inbound knowledge base screening.</>,
+            <>Optimized real-time call performance by reducing <strong>SIP latency by 30%</strong> through debugging and streamlining Redis Streams and WebSocket event handling for OpenAI&apos;s Realtime API integration.</>
+          ]}
+        />
       )
     },
     {
@@ -56,20 +43,13 @@ const WorkExperience = () => {
       icon: "📊",
       link: "https://www.varelitecsoft.com/",
       description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Analyzed service call transaction logs and developed a comprehensive dashboard using <strong>Tableau</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Translated client requirements into actionable specifications, leading to the successful development of multiple concept documents.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Developed a <strong>Django-based asset management framework</strong>, integrating <strong>Win32 API</strong> for device registration and software patch management.</span>
-          </li>
-        </ul>
+        <ExperiencePoints
+          points={[
+            <>Analyzed service call transaction logs and developed a comprehensive dashboard using <strong>Tableau</strong>.</>,
+            <>Translated client requirements into actionable specifications, leading to the successful development of multiple concept documents.</>,
+            <>Developed a <strong>Django-based asset management framework</strong>, integrating <strong>Win32 API</strong> for device registration and software patch management.</>
+          ]}
+        />
       )
     },
     {
@@ -79,20 +59,13 @@ const WorkExperience = () => {
       icon: "🤖",
       link: "https://www.wizdigital.ie/",
       description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Implemented <strong>NLU and NLP</strong> techniques on multiple clientele dataset to encrypt and safeguard sensitive information with an accuracy of <strong>92%</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Collaborated with cross functional teams to integrate <strong>privacy-preserving techniques</strong> seamlessly into legacy and existing systems.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Deployed end to end <strong>chatbot services</strong> and fine tuned open source <strong>LLMs</strong> to drive customer satisfaction close to <strong>75%</strong>.</span>
-          </li>
-        </ul>
+        <ExperiencePoints
+          points={[
+            <>Implemented <strong>NLU and NLP</strong> techniques on multiple clientele dataset to encrypt and safeguard sensitive information with an accuracy of <strong>92%</strong>.</>,
+            <>Collaborated with cross functional teams to integrate <strong>privacy-preserving techniques</strong> seamlessly into legacy and existing systems.</>,
+            <>Deployed end to end <strong>chatbot services</strong> and fine tuned open source <strong>LLMs</strong> to drive customer satisfaction close to <strong>75%</strong>.</>
+          ]}
+        />
       )
     },
     {
@@ -102,20 +75,13 @@ const WorkExperience = () => {
       icon: "☕",
       link: "https://www.entrepreneurshipnetwork.net/",
       description: (
-        <ul className="list-none space-y-2 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Analyzed requirements and planned <strong>SRS</strong> for multi-media organizations.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Implemented <strong>REST APIs</strong> and optimized database queries for payment gateways via <strong>RazorPay</strong>.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-[#007bff] mt-1">▸</span>
-            <span>Worked on performance improvements and bug fixes resolving to a <strong>20% improvement</strong> in backend lags.</span>
-          </li>
-        </ul>
+        <ExperiencePoints
+          points={[
+            <>Analyzed requirements and planned <strong>SRS</strong> for multi-media organizations.</>,
+            <>Implemented <strong>REST APIs</strong> and optimized database queries for payment gateways via <strong>RazorPay</strong>.</>,
+            <>Worked on performance improvements and bug fixes resolving to a <strong>20% improvement</strong> in backend lags.</>
+          ]}
+        />
       )
     }
   ]
