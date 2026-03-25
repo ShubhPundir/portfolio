@@ -4,6 +4,22 @@ import { useEffect, useRef, useState } from 'react'
 // This fixed the hydration mismatch error
 // FIXME: Find a better solution for this
 // FIXME: Make a common component for filters and pass in values as props
+
+// led successfully in 4.2s
+
+// ./src/app/freelancing/page.tsx
+// 13:9  Warning: The 'projects' array makes the dependencies of useMemo Hook (at 
+// line 183) change on every render. To fix this, wrap the initialization of 'projects' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+// 13:9  Warning: The 'projects' array makes the dependencies of useMemo Hook (at 
+// line 194) change on every render. To fix this, wrap the initialization of 'projects' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+// 13:9  Warning: The 'projects' array makes the dependencies of useMemo Hook (at 
+// line 202) change on every render. To fix this, wrap the initialization of 'projects' in its own useMemo() Hook.  react-hooks/exhaustive-deps
+
+// ./src/components/techstack/TechStackCategory.tsx
+// 33:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. 
+// Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+// info  - Need to disable some ESLint 
 type Option = {
   label: string
   value: string
