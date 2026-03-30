@@ -24,6 +24,7 @@ export interface TimelineItemProps {
   impact?: string
   flag?: string
   countryCode?: string
+  highlights?: string[]
 }
 
 // For backward compatibility and specific type usage in pages
@@ -40,6 +41,7 @@ export interface FreelanceProject {
   impact: string
   flag: string
   countryCode: string
+  highlights?: string[]
 }
 
 interface TimelineProps {
@@ -94,7 +96,8 @@ const TimelineItem = (props: TimelineItemProps) => {
     techStack,
     impact,
     flag,
-    countryCode
+    countryCode,
+    highlights
   } = props
 
   // Determine variant based on props
@@ -216,28 +219,47 @@ const TimelineItem = (props: TimelineItemProps) => {
             )}
           </div>
 
-          {/* Freelance Specific: Impact */}
-          {impact && (
-            <div className="mb-4 p-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200/50">
-              <p className="text-xs font-semibold text-green-700 mb-1">Impact:</p>
-              <p className="text-sm text-[#555]">{impact}</p>
+          {/* Highlights / Metrics */}
+          {highlights && highlights.length > 0 && (
+            <div className="mb-6">
+              <div className="flex flex-wrap gap-2">
+                {highlights.map((highlight, index) => (
+                  <div 
+                    key={index}
+                    className="px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg flex items-center gap-2 shadow-sm"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span className="text-xs font-bold text-blue-800 uppercase tracking-wider">{highlight}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Freelance Specific: Tech Stack */}
-          {techStack && techStack.length > 0 && (
-            <div>
-              <p className="text-xs font-semibold text-[#666] mb-2">Tech Stack:</p>
-              <div className="flex flex-wrap gap-2">
-                {techStack.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-2.5 py-1 rounded-md bg-gradient-to-r from-[#007bff]/10 to-[#0056b3]/10 text-xs text-[#007bff] font-medium border border-[#007bff]/20"
-                  >
-                    {tech}
-                  </span>
-                ))}
+          {/* Impact Section */}
+          {impact && (
+            <div className="mb-6 p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-inner">
+              <div className="flex items-center gap-2 mb-2">
+                <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <p className="text-xs font-bold text-gray-900 uppercase tracking-widest">Business Impact</p>
               </div>
+              <p className="text-sm text-gray-700 leading-relaxed font-medium">{impact}</p>
+            </div>
+          )}
+
+          {/* Tech Stack */}
+          {techStack && techStack.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+              {techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-2.5 py-1 rounded-md bg-gray-50 text-[10px] text-gray-600 font-bold uppercase tracking-tighter border border-gray-200 hover:border-blue-400 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           )}
         </div>
