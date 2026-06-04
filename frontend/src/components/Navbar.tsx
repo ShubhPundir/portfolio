@@ -5,11 +5,11 @@ import NavLink from './NavLink'
 import { useState } from 'react'
 
 const navItems = [
-  { href: '/#work-experience', label: 'Work Experience' },
-  { href: '/allprojects', label: 'All Projects' },
-  { href: '/techstack', label: 'Tech Stack' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#case-studies', label: 'Case Studies' },
+  { href: '/#testimonials', label: 'Testimonials' },
   { href: '/blogs', label: 'Blogs' },
-  { href: '/freelancing', label: 'Freelancing' },
+  { href: '/freelancing', label: 'Freelance Portfolio' },
   { href: '/#contact', label: 'Contact' },
 ]
 
