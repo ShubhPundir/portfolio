@@ -36,6 +36,7 @@ export interface FreelanceProject {
   blurClientName: boolean
   location: string
   date: string
+  duration?: string
   techStack: string[]
   description: string
   impact: string
@@ -102,6 +103,9 @@ const TimelineItem = (props: TimelineItemProps) => {
 
   // Determine variant based on props
   const isFreelance = !!clientName
+
+  // For freelance cards the sidebar shows date; duration is shown inside the card
+  const freelanceDuration = isFreelance ? duration : undefined
 
   return (
     <div className="relative flex flex-col md:flex-row gap-6 pb-8">
@@ -178,6 +182,17 @@ const TimelineItem = (props: TimelineItemProps) => {
                     <span className="text-lg">{flag}</span>
                     <span>{location}</span>
                   </span>
+                  {freelanceDuration && (
+                    <>
+                      <span className="text-[#666]">•</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {freelanceDuration}
+                      </span>
+                    </>
+                  )}
                 </>
               ) : (
                 // Standard Subheader

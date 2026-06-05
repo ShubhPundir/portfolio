@@ -7,15 +7,15 @@ const WorkExperience = () => {
     {
       title: "Freelancer",
       company: "Self Employed",
-      duration: "Jan 2022 - Present",
+      duration: "Jan 2022 - May 2025",
       icon: "💼",
       link: "https://shubhpundir.github.io/portfolio/freelancing",
       description: (
         <ExperiencePoints
           points={[
-            <>Scraped/Crawled data for multiple clients producing tangible and meaningful <strong>business insights</strong>.</>,
-            <>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong>.</>,
-            <>Developed <strong>Real Time Dashboards</strong> onto <strong>Full-Stack applications</strong> from <strong>IOT Sensors</strong>, <strong>Distributed Management Services</strong>, etc.</>
+            <>Worked with startups, SMEs across <strong>India, UK, Denmark, UAE, Ethiopia and Morrocco</strong> building dashboards, AI backend systems to optimize business and operational efficiency.</>,
+            <>Developed <strong>ETL data pipelines</strong> for text preprocessing for <strong>Big Data</strong> for the use-cases of unifying unstructured messy data into structured formats for analytics, validate business hypothesis using keyword mapping and query resolving for greivances and SLA tracking.</>,
+            <>Developed <strong>LLM support systems</strong> for customer service chatbots, whatsapp + slack integrations with CRM systems using low cost and low latency methodologies.</>
           ]}
         />
       )

@@ -4,32 +4,18 @@ import Link from 'next/link'
 
 const caseStudies = [
   {
-    title: "Lead Generation Pipeline for UK Sourcing Agency",
-    client: "UK Sourcing & Staffing Agency",
-    location: "United Kingdom 🇬🇧",
-    metrics: [
-      { value: "500k+", label: "Profiles Processed" },
-      { value: "90%", label: "Manual Effort Cut" },
-      { value: "4-Hour", label: "Data Refresh Cycle" }
-    ],
-    problem: "The client needed real-time candidate availability data across 15+ complex job boards and professional directories. Manual sourcing was slow, error-prone, and couldn't keep pace with urgent talent requests.",
-    solution: "Built a highly resilient, distributed scraping pipeline using Python, PostgreSQL, and Apache Airflow. Integrated smart proxy rotation, user-agent spoofing, and optical character recognition (OCR) to bypass active scraping countermeasures. Implemented normalization schemas to feed cleaned data directly into the client's internal candidate database.",
-    outcome: "Harvested and organized over 500,000 professional profiles. Automated the entire ingestion cycle, cutting recruiter sourcing times from days to minutes, and enabling real-time candidate search capabilities.",
-    tech: ["Python", "Airflow", "PostgreSQL", "BeautifulSoup", "ProxyMesh"]
-  },
-  {
     title: "Production RAG Infrastructure for Enterprise Document Intelligence",
-    client: "Alice Ann",
+    client: "Alice Ann Williams",
     location: "Denmark 🇩🇰",
     metrics: [
       { value: "85%", label: "Latency Reduction" },
       { value: "92%", label: "Search Accuracy" },
-      { value: "$12k", label: "Monthly Savings" }
+      { value: "$12k", label: "Monthly Notional Savings" }
     ],
-    problem: "The client had a slow internal search utility looking up thousands of complex engineering documents. The legacy system suffered from high retrieval latency (averaging 45s) and frequent LLM hallucinations at scale.",
-    solution: "Architected a low-latency hybrid search retrieval-augmented generation (RAG) pipeline. Designed custom indexing protocols using FastAPI, Qdrant vector database, and custom semantic reranking models to filter out noise. Engineered a stateful response engine with strict guardrails to prevent hallucinations.",
+    problem: "The client had a slow internal search utility looking up thousands of complex engineering documents, guidelines, principles, etc. The legacy system suffered from high retrieval latency (averaging 45s) and frequent LLM hallucinations at scale.",
+    solution: "Architected a low-latency hybrid search retrieval-augmented generation (RAG) pipeline. Designed custom indexing protocols using FastAPI, Open Search Instance, and custom semantic reranking models to filter out noise. Engineered a stateful response engine with strict guardrails to prevent hallucinations.",
     outcome: "Reduced search and retrieval latency down to 3 seconds. Scaled seamlessly to 1,200+ monthly active users (MAU) while cutting manual overhead, saving $12,000/month in operations cost.",
-    tech: ["FastAPI", "LangChain", "Qdrant DB", "ReactJS", "MongoDB"]
+    tech: ["FastAPI", "LangChain", "OpenSearch", "ReactJS"]
   },
   {
     title: "Automated Customer Operations (CRM) Engine",

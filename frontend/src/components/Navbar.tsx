@@ -7,9 +7,9 @@ import { useState } from 'react'
 const navItems = [
   { href: '/#services', label: 'Services' },
   { href: '/#case-studies', label: 'Case Studies' },
-  { href: '/#testimonials', label: 'Testimonials' },
   { href: '/blogs', label: 'Blogs' },
-  { href: '/freelancing', label: 'Freelance Portfolio' },
+  { href: '/freelancing', label: 'Freelance Clients' },
+  { href: '/techstack', label: 'Tech Stack'},
   { href: '/#contact', label: 'Contact' },
 ]
 
