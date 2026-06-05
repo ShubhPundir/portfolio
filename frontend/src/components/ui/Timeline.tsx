@@ -121,8 +121,16 @@ const TimelineItem = (props: TimelineItemProps) => {
 
       {/* Date - Desktop */}
       <div className="hidden md:block w-32 flex-shrink-0 pt-1">
-        <div className="text-right">
-          <div className="text-sm font-semibold text-[#007bff]">{duration || date}</div>
+        <div className="text-right flex flex-col items-end gap-1.5">
+          <div className="text-sm font-semibold text-[#007bff]">{date || duration}</div>
+          {isFreelance && freelanceDuration && (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {freelanceDuration}
+            </span>
+          )}
         </div>
       </div>
 
@@ -133,8 +141,16 @@ const TimelineItem = (props: TimelineItemProps) => {
         </div>
 
         {/* Date - Mobile */}
-        <div className="md:hidden">
-          <div className="text-sm font-semibold text-[#007bff]">{duration || date}</div>
+        <div className="md:hidden flex flex-col gap-1">
+          <div className="text-sm font-semibold text-[#007bff]">{date || duration}</div>
+          {isFreelance && freelanceDuration && (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700 w-fit">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {freelanceDuration}
+            </span>
+          )}
         </div>
       </div>
 
@@ -182,17 +198,6 @@ const TimelineItem = (props: TimelineItemProps) => {
                     <span className="text-lg">{flag}</span>
                     <span>{location}</span>
                   </span>
-                  {freelanceDuration && (
-                    <>
-                      <span className="text-[#666]">•</span>
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-semibold text-blue-700">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {freelanceDuration}
-                      </span>
-                    </>
-                  )}
                 </>
               ) : (
                 // Standard Subheader
